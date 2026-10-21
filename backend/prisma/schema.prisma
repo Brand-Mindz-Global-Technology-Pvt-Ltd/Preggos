@@ -1,0 +1,9 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+model User { id String @id @default(cuid()); email String @unique; passwordHash String; role String @default("CUSTOMER"); createdAt DateTime @default(now()); orders Order[] }
+model Product { id String @id @default(cuid()); name String; slug String @unique; description String; pricePaise Int; stock Int @default(0); active Boolean @default(true); createdAt DateTime @default(now()); variants Variant[]; orderItems OrderItem[] }
+model Variant { id String @id @default(cuid()); productId String; sku String @unique; name String; pricePaise Int; stock Int @default(0); product Product @relation(fields:[productId],references:[id],onDelete:Cascade); @@index([productId]) }
+model Order { id String @id @default(cuid()); userId String?; status String @default("PENDING"); paymentStatus String @default("PENDING"); totalPaise Int; createdAt DateTime @default(now()); user User? @relation(fields:[userId],references:[id]); items OrderItem[] }
+model OrderItem { id String @id @default(cuid()); orderId String; productId String; nameSnapshot String; skuSnapshot String; unitPricePaise Int; quantity Int; order Order @relation(fields:[orderId],references:[id],onDelete:Cascade); product Product @relation(fields:[productId],references:[id]) }
+model Coupon { id String @id @default(cuid()); code String @unique; percentOff Int; expiresAt DateTime?; usageLimit Int?; usedCount Int @default(0) }
+model AuditLog { id String @id @default(cuid()); actorId String?; action String; entity String; entityId String; createdAt DateTime @default(now()); @@index([entity,entityId]) }

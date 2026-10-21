@@ -1,0 +1,1 @@
+export function Button({ children, type = "button", onClick }: { children: React.ReactNode; type?: "button" | "submit"; onClick?: () => void }) { return <button type={type} onClick={onClick} className="rounded-full bg-orange px-6 py-4 font-bold text-white">{children}</button>; }

@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@theme {
+  --color-cream: #fffaf3;
+  --color-navy: #16324f;
+  --color-orange: #f47a45;
+  --color-mint: #dff4eb;
+  --color-peach: #ffe3d4;
+  --color-lilac: #eee8ff;
+  --color-sun: #fff1b8;
+  --font-display: "Segoe Print", "Comic Sans MS", cursive;
+}
