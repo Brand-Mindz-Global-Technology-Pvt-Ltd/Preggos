@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preggos - Figma-Ready HeroBanner Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: #F4F6F9;
+      color: #0C2340;
+      padding: 32px 20px 60px;
+    }
+    .container {
+      max-width: 1480px;
+      margin: 0 auto;
+    }
+    header {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(12, 35, 64, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-title h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0C2340;
+      margin-bottom: 4px;
+    }
+    .header-title p {
+      font-size: 14px;
+      color: #5A6E85;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: none;
+    }
+    .btn-primary {
+      background: #0E8276;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(14, 130, 118, 0.25);
+    }
+    .btn-primary:hover {
+      background: #0B6B61;
+      transform: translateY(-1px);
+    }
+    .btn-orange {
+      background: #F15A24;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(241, 90, 36, 0.25);
+    }
+    .btn-orange:hover {
+      background: #D84B18;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #F0F4F8;
+      color: #0C2340;
+    }
+    .btn-secondary:hover {
+      background: #E2E8F0;
+    }
+    .card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(12, 35, 64, 0.06);
+      margin-bottom: 24px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-pill {
+      background: #E8F3FD;
+      color: #1A6FB0;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+    .banner-wrapper {
+      width: 100%;
+      background: #FFFDF7;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #E8E2D5;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+    .banner-wrapper svg, .banner-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .info-box {
+      background: #F9FAFB;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #EDF2F7;
+    }
+    .info-box h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0C2340;
+      margin-bottom: 8px;
+    }
+    .info-box ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #4A5568;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0C2340;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      display: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-title">
+        <h1>Preggos HeroBanner — Figma-Ready Design</h1>
+        <p>Proportion: 1440 × 360 px • Clean SVG with editable text layers & vector groupings</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" id="copyBtn" onclick="copySvgToClipboard()">
+          📋 Copy SVG for Figma
+        </button>
+        <a class="btn btn-orange" href="/preggos-hero-banner.svg" download="preggos-hero-banner-1440x360.svg">
+          ⬇️ Download .SVG File
+        </a>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="card-title">
+        <span>Figma-Ready 1440×360 Banner Live Vector Preview</span>
+        <span class="badge-pill">Editable SVG</span>
+      </div>
+      <div class="banner-wrapper" id="svgContainer">
+        <!-- SVG will be loaded here -->
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="info-box">
+        <h3>✨ Figma Organization & Layer Structure</h3>
+        <ul>
+          <li><strong>Hero Text:</strong> Editable SVG &lt;text&gt; layers with Google Font <em>Caveat</em> (700) for "Happy Mom," & "Healthy Daughter", and <em>Plus Jakarta Sans</em> for supporting copy and social proof.</li>
+          <li><strong>Decorations:</strong> Vector paths for top-left yellow sun disk & outline, small heading sun doodle, teal left leaves, lower-left teal blob, and orange botanical branch.</li>
+          <li><strong>Trust Badges:</strong> Vector icons (Leaf, Flask, Heart) with editable badge labels.</li>
+          <li><strong>CTA Buttons:</strong> Pill-shaped vector rectangles with "Shop for Mom" (Orange) and "Shop for Daughter" (Yellow) + vector arrow icons.</li>
+          <li><strong>Hero Image:</strong> Lifestyle photo masked inside the smooth organic inward curve clip path, plus the pinned sticky note ("Nutrition for Today...").</li>
+          <li><strong>Bottom Wave:</strong> Pale-blue soft wave fill with thin outline across the entire 1440px width.</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>🚀 How to use in Figma</h3>
+        <ul>
+          <li><strong>Option 1 (Fastest):</strong> Click <em>"Copy SVG for Figma"</em> above, open your Figma canvas, and press <code>Ctrl + V</code> (or <code>Cmd + V</code>). All layers will paste directly into Figma with groups preserved!</li>
+          <li><strong>Option 2:</strong> Click <em>"Download .SVG File"</em> and drag-and-drop the downloaded file directly into your Figma workspace.</li>
+          <li><strong>Fonts:</strong> Figma natively supports Google Fonts (Caveat and Plus Jakarta Sans), so the handwritten script and typography render immediately.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">SVG copied to clipboard! Paste directly into Figma (Ctrl+V)</div>
+
+  <script>
+    let svgRawCode = '';
+
+    fetch('/preggos-hero-banner.svg')
+      .then(res => res.text())
+      .then(data => {
+        svgRawCode = data;
+        document.getElementById('svgContainer').innerHTML = data;
+      })
+      .catch(err => {
+        console.error('Failed to load SVG:', err);
+      });
+
+    function copySvgToClipboard() {
+      if (!svgRawCode) return;
+      navigator.clipboard.writeText(svgRawCode).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>
