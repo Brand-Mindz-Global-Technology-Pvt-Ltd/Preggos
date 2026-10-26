@@ -24,9 +24,9 @@ export const homeAssets = {
     { title: "Postnatal",         image: postnatal,        color: "bg-[#f7b3b8]", text: "Gentle support",       objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0  },
     { title: "Lactation Support", image: lactationSupport, color: "bg-[#f7ca68]", text: "Nourish your journey", objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0  },
     // healthy-snacking: real transparent gap at row 47/441 (10.7%) → clip just past it
-    { title: "Healthy Snacking",  image: healthySnacking,  color: "bg-[#b7dfc9]", text: "Feel-good bites",      objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 12 },
+    { title: "Healthy Snacking",  image: healthySnacking,  color: "bg-[#b7dfc9]", text: "Feel-good bites",      objectFit: "cover" as const, objectPosition: "center top",  clipTopPct: 12 },
     // kids-nutrition: fragment and main subject are contiguous (no gap) → object-cover focused on main subject
-    { title: "Kids Nutrition",    image: kidsNutrition,    color: "bg-[#f5c65c]", text: "Happy growing",        objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 9 },
-    { title: "Women's Wellness",  image: womensWellness,   color: "bg-[#b8d3f1]", text: "Care for you",        objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 12 },
+    { title: "Kids Nutrition",    image: kidsNutrition,    color: "bg-[#f5c65c]", text: "Happy growing",        objectFit: "cover" as const, objectPosition: "center top",  clipTopPct: 9 },
+    { title: "Women's Wellness",  image: womensWellness,   color: "bg-[#b8d3f1]", text: "Care for you",        objectFit: "cover" as const, objectPosition: "center top",  clipTopPct: 12 },
   ],
 } as const;
