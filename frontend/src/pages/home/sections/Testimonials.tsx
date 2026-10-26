@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Star } from "lucide-react";
 import { WaveDivider } from "../../../components/decorations/WaveDivider";
 import momDaughterImg from "../../../assets/images/home/mom-daughter.png";
+import greenLeaf from "../../../assets/images/home/leaf-png/green-leaf.png";
 
 const reviews = [
   {
@@ -63,10 +64,10 @@ export function Testimonials() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading & Subtitle */}
         <div className="text-center">
-          <h2 className="font-display text-2xl font-black text-[#0C2340] sm:text-3xl md:text-[32px] leading-tight">
+          <h2 data-scroll-reveal className="font-display text-2xl font-black text-[#0C2340] sm:text-3xl md:text-[32px] leading-tight">
             Real Stories. Real Happiness.
           </h2>
-          <p className="mt-1 text-xs text-[#50617A] sm:text-[13px]">
+          <p data-scroll-reveal className="mt-1 text-xs text-[#50617A] sm:text-[13px]">
             Loved by thousands of moms and families &amp; more!
           </p>
         </div>
@@ -75,72 +76,11 @@ export function Testimonials() {
         <div className="mt-4 flex items-center justify-center gap-2 lg:gap-3 xl:gap-4">
           {/* Left Decorative Botanical Illustration */}
           <div className="hidden shrink-0 lg:block" aria-hidden="true">
-            <svg
-              width="54"
-              height="105"
-              viewBox="0 0 54 105"
-              fill="none"
-              className="shrink-0"
-            >
-              {/* Yellow doodle heart at top */}
-              <path
-                d="M 18 12 C 15 8 10 9 9 13 C 8 18 14 22 18 26 C 22 22 28 18 27 13 C 26 9 21 8 18 12 Z"
-                stroke="#FDB813"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              {/* Teal curving botanical stem */}
-              <path
-                d="M 28 100 C 24 78 22 52 36 30"
-                stroke="#0E8276"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              {/* Bottom leaf (left) */}
-              <path
-                d="M 25 84 C 16 80 14 70 21 66 C 27 70 27 78 25 84 Z"
-                stroke="#0E8276"
-                strokeWidth="1.6"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M 25 84 C 23 76 22 71 21 66"
-                stroke="#0E8276"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-              />
-              {/* Middle leaf (right) */}
-              <path
-                d="M 27 65 C 36 59 44 61 47 68 C 41 73 33 72 27 65 Z"
-                stroke="#0E8276"
-                strokeWidth="1.6"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M 27 65 C 34 67 40 67 47 68"
-                stroke="#0E8276"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-              />
-              {/* Upper leaf (left) */}
-              <path
-                d="M 31 48 C 22 42 23 32 30 29 C 37 32 36 41 31 48 Z"
-                stroke="#0E8276"
-                strokeWidth="1.6"
-                strokeLinejoin="round"
-              />
-              {/* Small golden blossom at base */}
-              <path
-                d="M 26 99 C 20 96 19 90 24 87 C 27 91 28 95 26 99 Z"
-                fill="#FDB813"
-              />
-              <path
-                d="M 28 100 C 33 95 38 97 36 101 C 32 103 29 102 28 100 Z"
-                fill="#FDB813"
-              />
-            </svg>
+            <img
+              src={greenLeaf}
+              alt=""
+              className="h-[145px] w-[75px] shrink-0 object-contain"
+            />
           </div>
 
           {/* Three Testimonial Cards: Smooth Swipeable Carousel on Mobile, 3-Card Grid on Tablet/Desktop */}
@@ -152,7 +92,8 @@ export function Testimonials() {
             {reviews.map((review) => (
               <article
                 key={review.name}
-                className={`${review.bg} ${review.border} ${review.shape} flex min-h-[138px] w-[86%] sm:w-auto shrink-0 sm:shrink snap-center flex-col justify-between border p-3.5 sm:p-4 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-0.5`}
+                data-scroll-reveal
+                className={`motion-testimonial-card ${review.bg} ${review.border} ${review.shape} flex min-h-[138px] w-[86%] sm:w-auto shrink-0 sm:shrink snap-center flex-col justify-between border p-3.5 sm:p-4 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-0.5`}
               >
                 <div>
                   {/* Orange Quotation Mark Icon */}

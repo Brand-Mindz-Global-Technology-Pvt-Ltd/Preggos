@@ -1,3 +1,5 @@
+import { homeAssets } from "../../../data/homeAssets";
+
 export function BrandBenefits() {
   const benefits = [
     {
@@ -153,56 +155,15 @@ export function BrandBenefits() {
   return (
     <section className="relative overflow-x-clip bg-[#FFFDF7] px-4 py-3.5 sm:px-6 md:py-4 lg:px-8">
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-3 lg:flex-row lg:items-center lg:gap-3.5 xl:gap-5">
-        {/* Left Group: Botanical leaves branch + Heading with Doodle Rays & Heart */}
+        {/* Left Group: Botanical leaf PNG + Heading with Doodle Rays & Heart */}
         <div className="flex shrink-0 items-center justify-center gap-2 sm:gap-2.5 lg:justify-start">
-          {/* Teal botanical branch - cleanly positioned within layout, never clipped */}
+          {/* Green leaf PNG */}
           <div className="shrink-0" aria-hidden="true">
-            <svg
-              width="30"
-              height="64"
-              viewBox="0 0 30 64"
-              fill="none"
-              className="text-[#0E8276]"
-            >
-              <path
-                d="M 5 62 C 8 45 10 30 19 4"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              />
-              {/* Bottom leaf (left) */}
-              <path
-                d="M 6 51 C 1 47 1 40 5 38 C 10 40 9 47 6 51 Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-              />
-              <path d="M 6 51 C 5 45 5 42 5 38" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
-              {/* Middle leaf (right) */}
-              <path
-                d="M 9 38 C 14 34 20 35 22 40 C 18 43 13 43 9 38 Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-              />
-              <path d="M 9 38 C 13 39 17 40 22 40" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
-              {/* Upper leaf (left) */}
-              <path
-                d="M 13 25 C 8 21 8 15 12 13 C 17 15 16 21 13 25 Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-              />
-              <path d="M 13 25 C 12 20 12 16 12 13" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
-              {/* Top leaf (right) */}
-              <path
-                d="M 17 13 C 21 8 26 8 28 12 C 24 15 20 16 17 13 Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-              />
-              <path d="M 17 13 C 21 13 24 13 28 12" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
-            </svg>
+            <img
+              src={homeAssets.leaves.green}
+              alt=""
+              className="home-doodle-drift h-16 w-16 sm:h-20 sm:w-20 object-contain"
+            />
           </div>
 
           {/* Heading with yellow doodle rays and heart */}
@@ -238,7 +199,7 @@ export function BrandBenefits() {
               <line x1="144" y1="73" x2="152" y2="83" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
 
-            <h2 className="relative z-10 font-display text-[26px] font-bold leading-[1.08] text-[#0C2340] sm:text-[27px] lg:text-[28px]">
+            <h2 data-scroll-reveal className="relative z-10 font-display text-[26px] font-bold leading-[1.08] text-[#0C2340] sm:text-[27px] lg:text-[28px]">
               <span className="block">Why Moms</span>
               <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
                 <span>Love Preggos</span>
@@ -268,7 +229,8 @@ export function BrandBenefits() {
           {benefits.map((b) => (
             <div
               key={b.title}
-              className={`${b.bg} flex h-[62px] sm:h-[68px] items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl px-2.5 sm:px-3.5 py-1.5 sm:py-2 transition-transform duration-200 hover:-translate-y-0.5`}
+              data-scroll-reveal
+              className={`motion-benefit-card ${b.bg} flex h-[62px] sm:h-[68px] items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl px-2.5 sm:px-3.5 py-1.5 sm:py-2 transition-transform duration-200 hover:-translate-y-0.5`}
             >
               <div className="shrink-0 scale-90 sm:scale-100">{b.icon}</div>
               <div className="min-w-0 flex-1">

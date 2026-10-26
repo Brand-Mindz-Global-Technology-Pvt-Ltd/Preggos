@@ -40,29 +40,26 @@ export function BestSellers() {
       </div>
 
       <div className="pointer-events-none absolute bottom-4 -left-2 z-0 hidden sm:block" aria-hidden="true">
-        <svg width="60" height="90" viewBox="0 0 60 90" fill="none" className="text-[#EF6241]/80">
-          <path d="M 10 90 C 15 65 25 40 35 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          <path d="M 20 65 C 10 60 5 66 8 72 C 14 74 20 70 20 65 Z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M 23 50 C 33 45 38 52 34 58 C 28 60 22 55 23 50 Z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M 30 32 C 22 26 18 32 20 38 C 25 40 30 37 30 32 Z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M 33 18 C 30 14 26 16 28 20 C 30 22 34 22 33 18 Z" stroke="currentColor" strokeWidth="1.8" />
-        </svg>
+        <img
+          src={homeAssets.leaves.pink}
+          alt=""
+          className="home-doodle-drift h-20 w-20 object-contain"
+        />
       </div>
 
       <div className="pointer-events-none absolute -right-2 bottom-6 z-0 hidden sm:block" aria-hidden="true">
-        <svg width="70" height="120" viewBox="0 0 70 120" fill="none" className="text-[#0E8276]/80">
-          <path d="M 60 120 C 50 85 45 50 50 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          <path d="M 52 25 C 38 18 28 26 32 36 C 42 38 50 32 52 25 Z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M 48 55 C 34 48 25 56 29 66 C 39 68 47 62 48 55 Z" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M 49 85 C 36 78 28 86 32 96 C 41 98 48 92 49 85 Z" stroke="currentColor" strokeWidth="1.8" />
-        </svg>
+        <img
+          src={homeAssets.leaves.gold}
+          alt=""
+          className="home-doodle-drift h-24 w-24 object-contain"
+        />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header: Centered Title + Subtitle with Top-Right "View All Products →" */}
         <div className="relative mb-8 sm:mb-10">
           <div className="text-center">
-            <h2 className="font-display text-3xl font-black tracking-tight text-[#0C2340] sm:text-4xl">
+            <h2 data-scroll-reveal className="font-display text-3xl font-black tracking-tight text-[#0C2340] sm:text-4xl">
               Bestsellers You’ll Love{" "}
               <svg
                 className="-mt-1 ml-1 inline-block rotate-6 text-[#F15A24]"
@@ -81,7 +78,7 @@ export function BestSellers() {
                 />
               </svg>
             </h2>
-            <p className="mt-1.5 text-xs font-medium text-[#50617A] sm:text-sm">
+            <p data-scroll-reveal className="mt-1.5 text-xs font-medium text-[#50617A] sm:text-sm">
               Customer favorites for happy, healthy homes
             </p>
           </div>
@@ -106,7 +103,8 @@ export function BestSellers() {
             return (
               <article
                 key={p.id}
-                className="group relative flex flex-col justify-between rounded-xl sm:rounded-2xl bg-white p-2.5 sm:p-5 shadow-[0_4px_24px_rgba(16,38,80,0.06)] border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(16,38,80,0.12)]"
+                data-scroll-reveal
+                className="motion-product-card group relative flex flex-col justify-between rounded-xl sm:rounded-2xl bg-white p-2.5 sm:p-5 shadow-[0_4px_24px_rgba(16,38,80,0.06)] border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(16,38,80,0.12)]"
               >
                 <div>
                   {/* Top-left Badge and Top-right Wishlist Heart */}
@@ -134,7 +132,7 @@ export function BestSellers() {
                   {/* Centered Product Image */}
                   <Link
                     to={`/product/${p.id}`}
-                    className="my-2 sm:my-3 flex h-28 sm:h-44 w-full items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105"
+                    className="my-2 sm:my-3 flex h-28 sm:h-44 w-full items-center justify-center overflow-hidden"
                   >
                     <img
                       src={p.image}

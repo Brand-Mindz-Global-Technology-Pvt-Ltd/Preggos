@@ -73,23 +73,37 @@ body {
   transform: translateY(0);
 }
 
-.motion-product-card {
-  border-radius: 1.5rem;
+.home-page [data-scroll-state="pending"] {
+  opacity: 0;
+  transform: translateY(18px) scale(0.99);
   transition:
-    transform 220ms ease,
-    box-shadow 220ms ease;
+    opacity 640ms ease,
+    transform 640ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
 }
 
-.motion-product-card:hover,
-.motion-product-card:focus-within {
-  transform: translateY(-3px);
+.home-page [data-scroll-state="revealed"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.home-page .motion-product-card {
+  border-radius: 1.5rem;
+  transition:
+    translate 320ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    box-shadow 320ms ease;
+}
+
+.home-page .motion-product-card:hover,
+.home-page .motion-product-card:focus-within {
+  translate: 0 -4px;
   box-shadow: 0 8px 24px rgb(12 35 64 / 10%);
 }
 
 @keyframes hero-content-enter {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(14px);
   }
 
   to {
@@ -98,13 +112,128 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  [data-hero-enter="text"] {
-    animation: hero-content-enter 650ms ease-out both;
+@keyframes hero-image-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
   }
 
-  [data-hero-enter="image"] {
-    animation: hero-content-enter 750ms 100ms ease-out both;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes home-gentle-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0) rotate(1deg);
+  }
+}
+
+@keyframes hero-photo-drift {
+  0%,
+  100% {
+    transform: scale(1.015) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: scale(1.045) translate3d(-0.35%, -0.25%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-page [data-hero-enter="text"] > * {
+    animation: hero-content-enter 680ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+  }
+
+  .home-page [data-hero-enter="text"] > :nth-child(1) {
+    animation-delay: 80ms;
+  }
+
+  .home-page [data-hero-enter="text"] > :nth-child(2) {
+    animation-delay: 150ms;
+  }
+
+  .home-page [data-hero-enter="text"] > :nth-child(3) {
+    animation-delay: 220ms;
+  }
+
+  .home-page [data-hero-enter="text"] > :nth-child(4) {
+    animation-delay: 290ms;
+  }
+
+  .home-page [data-hero-enter="text"] > :nth-child(5) {
+    animation-delay: 360ms;
+  }
+
+  .home-page [data-hero-enter="image"] {
+    animation: hero-image-enter 850ms 100ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+  }
+
+  .home-page .hero-photo-drift {
+    animation: hero-photo-drift 20s ease-in-out 1s infinite alternate;
+    will-change: transform;
+  }
+
+  .home-page .hero-leaf-drift,
+  .home-page .home-doodle-drift {
+    animation: home-gentle-drift 7s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .home-page .hero-leaf-drift--gold {
+    animation-delay: -3.5s;
+  }
+
+  .home-page .motion-product-card img,
+  .home-page .motion-category-card img,
+  .home-page .motion-bundle-card img {
+    transition: transform 650ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  }
+
+  .home-page .motion-product-card:hover img,
+  .home-page .motion-product-card:focus-within img,
+  .home-page .motion-category-card:hover img,
+  .home-page .motion-category-card:focus-visible img,
+  .home-page .motion-bundle-card:hover img,
+  .home-page .motion-bundle-card:focus-visible img {
+    transform: scale(1.045);
+  }
+
+  .home-page .motion-category-card > div,
+  .home-page .motion-bundle-card,
+  .home-page .motion-benefit-card,
+  .home-page .motion-testimonial-card {
+    transition:
+      translate 320ms cubic-bezier(0.2, 0.7, 0.25, 1),
+      box-shadow 320ms ease;
+  }
+
+  .home-page .motion-category-card:hover > div,
+  .home-page .motion-category-card:focus-visible > div,
+  .home-page .motion-bundle-card:hover,
+  .home-page .motion-bundle-card:focus-visible,
+  .home-page .motion-benefit-card:hover,
+  .home-page .motion-benefit-card:focus-within,
+  .home-page .motion-testimonial-card:hover,
+  .home-page .motion-testimonial-card:focus-within {
+    translate: 0 -3px;
+  }
+
+  .home-page .motion-product-card button,
+  .home-page a,
+  .home-page button {
+    transition-timing-function: cubic-bezier(0.2, 0.7, 0.25, 1);
+  }
+
+  .home-page a:active,
+  .home-page button:active {
+    scale: 0.985;
   }
 }
 

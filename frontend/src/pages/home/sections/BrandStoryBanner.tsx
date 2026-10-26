@@ -27,7 +27,7 @@ export function BrandStoryBanner() {
           </svg>
         </div>
 
-        {/* Bottom-Left: Teal organic wave shape & botanical branch */}
+        {/* Bottom-Left: Teal organic wave shape & green leaf PNG */}
         <div className="pointer-events-none absolute -bottom-2 -left-2 z-10 h-14 w-14 xs:h-18 xs:w-18 sm:-bottom-4 sm:-left-4 sm:h-44 sm:w-44" aria-hidden="true">
           <svg viewBox="0 0 160 160" fill="none" className="h-full w-full">
             {/* Mint/Teal organic corner blob */}
@@ -35,27 +35,21 @@ export function BrandStoryBanner() {
               d="M 0 60 C 40 50 85 85 95 125 C 100 145 95 155 90 160 L 0 160 Z"
               fill="#BCE4DD"
             />
-            {/* Teal botanical branch climbing up */}
-            <path
-              d="M 25 150 C 35 110 32 75 42 35"
-              stroke="#0E8276"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-            />
-            <path d="M 38 48 C 50 42 60 48 56 58 C 47 62 37 56 38 48 Z" fill="#0E8276" />
-            <path d="M 33 75 C 22 70 14 77 18 87 C 26 89 33 83 33 75 Z" fill="#0E8276" />
-            <path d="M 32 105 C 44 98 52 105 48 116 C 39 120 30 113 32 105 Z" fill="#0E8276" />
           </svg>
+          <img
+            src={homeAssets.leaves.green}
+            alt=""
+            className="home-doodle-drift absolute bottom-2 left-2 h-12 w-12 xs:h-16 xs:w-16 sm:h-28 sm:w-28 object-contain"
+          />
         </div>
 
-        {/* Botanical sprig between text and photo */}
+        {/* Pink leaf PNG between text and photo */}
         <div className="pointer-events-none absolute bottom-0 left-[48%] xs:left-[49%] sm:left-[45%] md:left-[43%] lg:left-[45%] z-20 h-10 w-5 xs:h-12 xs:w-6 sm:h-20 sm:w-9" aria-hidden="true">
-          <svg viewBox="0 0 40 90" fill="none" className="h-full w-full">
-            <path d="M 8 90 C 14 60 12 30 18 5" stroke="#13857D" strokeWidth="2.2" strokeLinecap="round" />
-            <path d="M 17 18 C 26 12 34 16 32 24 C 24 28 16 23 17 18 Z" fill="#13857D" opacity="0.9" />
-            <path d="M 14 42 C 4 36 -2 43 2 51 C 9 54 14 48 14 42 Z" fill="#13857D" opacity="0.9" />
-            <path d="M 13 68 C 24 61 31 66 29 74 C 21 78 13 73 13 68 Z" fill="#13857D" opacity="0.9" />
-          </svg>
+          <img
+            src={homeAssets.leaves.pink}
+            alt=""
+            className="home-doodle-drift h-full w-full object-contain"
+          />
         </div>
 
         {/* Bottom-Right Teal Corner Wave */}
@@ -73,14 +67,14 @@ export function BrandStoryBanner() {
         {/* ======================================================== */}
         <div className="relative z-10 grid grid-cols-[52%_48%] xs:grid-cols-[50%_50%] sm:grid-cols-[48%_52%] lg:grid-cols-[46%_54%] min-h-[160px] xs:min-h-[185px] sm:min-h-[250px] md:min-h-[280px]">
           {/* Left Column: Heading, Supporting Text, CTA */}
-          <div className="flex flex-col justify-center px-2.5 py-3 xs:px-4 xs:py-3.5 sm:px-10 md:py-8 lg:pl-20 lg:pr-6">
+          <div className="flex flex-col justify-center px-2.5 py-3 xs:px-4 xs:py-3.5 sm:px-10 md:py-8 lg:pl-20 lg:pr-6 translate-x-[25px] sm:translate-x-[45px]">
             {/* Heading Container with Doodles */}
             <div className="relative">
-              <h2 className="font-display tracking-tight">
-                <span className="block text-[14px] xs:text-[17px] sm:text-3xl md:text-4xl lg:text-[42px] font-black text-[#A03E26] leading-[1.08]">
+              <h2 data-scroll-reveal className="font-display tracking-tight">
+                <span className="block text-[20px] xs:text-[22px] sm:text-[40px] md:text-[46px] lg:text-[52px] font-black text-[#A03E26] leading-[1.08]">
                   Healthy Habits
                 </span>
-                <span className="relative block text-[14px] xs:text-[17px] sm:text-3xl md:text-4xl lg:text-[44px] font-black text-[#0E7870] leading-[1.08] mt-0.5">
+                <span className="relative block text-[20px] xs:text-[22px] sm:text-[40px] md:text-[46px] lg:text-[54px] font-black text-[#0E7870] leading-[1.08] mt-0.5">
                   Start Together
                   {/* Small gold heart doodle above/right */}
                   <svg
@@ -117,19 +111,19 @@ export function BrandStoryBanner() {
             </div>
 
             {/* Supporting Text */}
-            <p className="mt-1 xs:mt-1.5 sm:mt-3.5 max-w-[320px] text-[7px] xs:text-[8.5px] sm:text-xs md:text-sm font-semibold leading-tight xs:leading-snug sm:leading-relaxed text-[#1C324E]">
+            <p data-scroll-reveal className="mt-1 xs:mt-1.5 sm:mt-3.5 max-w-[320px] text-[13px] xs:text-[14px] sm:text-[22px] md:text-[24px] font-semibold leading-tight xs:leading-snug sm:leading-relaxed text-[#1C324E]">
               Because the choices you make today,
               <br className="inline" /> shape her tomorrow.
             </p>
 
             {/* CTA Button */}
-            <div className="mt-1.5 xs:mt-2.5 sm:mt-5">
+            <div data-scroll-reveal className="mt-1.5 xs:mt-2.5 sm:mt-5">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-1 sm:gap-2 rounded-full bg-[#0E7870] px-2 py-0.5 xs:px-3 xs:py-1 sm:px-6 sm:py-2.5 text-[7px] xs:text-[8.5px] sm:text-xs md:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:bg-[#0A5A53] hover:shadow-md active:scale-[0.98] whitespace-nowrap"
+                className="inline-flex items-center gap-1 sm:gap-2 rounded-full bg-[#0E7870] px-2 py-0.5 xs:px-3 xs:py-1 sm:px-6 sm:py-2.5 text-[12px] xs:text-[13px] sm:text-[22px] md:text-[24px] font-bold text-white shadow-xs transition-all duration-200 hover:bg-[#0A5A53] hover:shadow-md active:scale-[0.98] whitespace-nowrap"
               >
                 <span>Explore Our Story</span>
-                <ArrowRight className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 stroke-[2.5]" />
+                <ArrowRight className="h-4 w-4 xs:h-4.5 xs:w-4.5 sm:h-5 sm:w-5 stroke-[2.5]" />
               </Link>
             </div>
           </div>
@@ -146,7 +140,7 @@ export function BrandStoryBanner() {
             </svg>
 
             {/* Clipped Image Container - responsive organic clip on desktop and mobile */}
-            <div className="relative h-full w-full overflow-hidden story-organic-clip">
+            <div data-scroll-reveal className="relative h-full w-full overflow-hidden story-organic-clip">
               <img
                 src={homeAssets.story.src}
                 alt={homeAssets.story.alt}

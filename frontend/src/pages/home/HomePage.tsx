@@ -1,2 +1,2 @@
 import { HeroBanner } from "./sections/HeroBanner"; import { ShopByNeed } from "./sections/ShopByNeed"; import { BrandBenefits } from "./sections/BrandBenefits"; import { BestSellers } from "./sections/BestSellers"; import { BrandStoryBanner } from "./sections/BrandStoryBanner"; import { ProductBundles } from "./sections/ProductBundles"; import { Testimonials } from "./sections/Testimonials";
-export function HomePage() { return <main><HeroBanner /><ShopByNeed /><BrandBenefits /><BestSellers /><BrandStoryBanner /><ProductBundles /><Testimonials /></main>; }
+export function HomePage() { return <main className="home-page"><HeroBanner /><ShopByNeed /><BrandBenefits /><BestSellers /><BrandStoryBanner /><ProductBundles /><Testimonials /></main>; }

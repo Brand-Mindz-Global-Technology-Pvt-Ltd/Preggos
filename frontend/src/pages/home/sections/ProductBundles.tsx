@@ -35,10 +35,10 @@ export function ProductBundles() {
           <div className="flex items-center gap-2">
             <Gift className="text-[#ef6241] shrink-0" size={26} />
             <div>
-              <h2 className="font-display text-2xl font-black md:text-4xl text-[#102650]">
+              <h2 data-scroll-reveal className="font-display text-2xl font-black md:text-4xl text-[#102650]">
                 Better Together
               </h2>
-              <p className="text-xs leading-5 text-[#50617a] sm:text-sm">
+              <p data-scroll-reveal className="text-xs leading-5 text-[#50617a] sm:text-sm">
                 Wellness bundles for every stage &amp; every need.
               </p>
             </div>
@@ -57,7 +57,8 @@ export function ProductBundles() {
             <Link
               key={bundle.title}
               to="/shop"
-              className={`${bundle.color} relative flex flex-col sm:flex-row min-h-[140px] sm:min-h-[105px] items-center text-center sm:text-left gap-1.5 sm:gap-3 overflow-hidden rounded-xl sm:rounded-2xl p-2.5 sm:p-3 transition hover:-translate-y-1 shadow-xs last:col-span-2 sm:last:col-span-1 md:last:col-span-1 last:flex-row last:text-left last:items-center last:min-h-[90px] sm:last:min-h-[105px]`}
+              data-scroll-reveal
+              className={`motion-bundle-card ${bundle.color} relative flex flex-col sm:flex-row min-h-[140px] sm:min-h-[105px] items-center text-center sm:text-left gap-1.5 sm:gap-3 overflow-hidden rounded-xl sm:rounded-2xl p-2.5 sm:p-3 transition hover:-translate-y-1 shadow-xs last:col-span-2 sm:last:col-span-1 md:last:col-span-1 last:flex-row last:text-left last:items-center last:min-h-[90px] sm:last:min-h-[105px]`}
             >
               <span className="absolute right-2 top-2 sm:right-3 sm:top-2 rounded-full bg-white/85 px-1.5 py-0.5 text-[8px] sm:text-[9px] font-black text-[#ef6241]">
                 {bundle.badge}

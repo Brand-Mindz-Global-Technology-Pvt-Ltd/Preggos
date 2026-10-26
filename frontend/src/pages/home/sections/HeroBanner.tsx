@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroMomDaughter from "../../../assets/images/home/hero-mom-daughter.png";
+import greenLeaf from "../../../assets/images/home/leaf-png/green-leaf.png";
+import goldLeaf from "../../../assets/images/home/leaf-png/gold-leaf.png";
 
 export function HeroBanner() {
   return (
@@ -11,42 +13,40 @@ export function HeroBanner() {
         {/* GROUP: Decorations                                       */}
         {/* ======================================================== */}
         {/* 1. Large partial yellow sun in top-left corner */}
-        <div className="pointer-events-none absolute -left-10 -top-10 z-0 h-28 w-28 sm:-left-8 sm:-top-8 sm:h-44 sm:w-44">
+        <div className="pointer-events-none absolute -left-10 -top-10 z-0 h-28 w-28 sm:-left-8 sm:-top-8 sm:h-44 sm:w-44 select-none">
           <svg viewBox="0 0 160 160" fill="none" className="h-full w-full">
             <circle cx="10" cy="10" r="120" fill="#FBAF3C" />
             <circle cx="10" cy="10" r="132" stroke="#F5A623" strokeWidth="2.5" fill="none" opacity="0.85" />
-            {/* Orange curved doodle accent below sun */}
-            <path
-              d="M 16 142 C 32 150 54 136 72 145"
-              stroke="#F15A24"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <ellipse cx="32" cy="152" rx="4" ry="2.5" fill="#F15A24" transform="rotate(-15 32 152)" />
           </svg>
         </div>
 
-        {/* 2. Teal botanical leaves along left edge */}
-        <div className="pointer-events-none absolute bottom-3 -left-2 z-10 h-36 w-12 sm:bottom-6 sm:left-0 sm:h-64 sm:w-20">
-          <svg viewBox="0 0 70 200" fill="none" className="h-full w-full">
+        {/* 2. Left Teal Botanical Leaf decoration (green-leaf.png) */}
+        <div className="pointer-events-none absolute -left-1 sm:left-0 bottom-6 xs:bottom-8 sm:bottom-12 md:bottom-14 z-10 w-8 xs:w-10 sm:w-[77px] md:w-[96px] lg:w-[131px] translate-x-[5px] lg:translate-x-0 select-none">
+          <img
+            src={greenLeaf}
+            alt=""
+            aria-hidden="true"
+            className="hero-leaf-drift h-auto w-full object-contain"
+            loading="eager"
+          />
+        </div>
+
+        {/* 2b. Small outlined heart decoration near left green leaf */}
+        <div className="pointer-events-none absolute left-3 xs:left-4 sm:left-7 md:left-9 lg:left-10 bottom-24 xs:bottom-28 sm:bottom-40 md:bottom-48 lg:bottom-52 z-10 select-none transform -rotate-[8deg]">
+          <svg viewBox="0 0 24 24" fill="none" className="h-2.5 w-2.5 xs:h-3 xs:w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 lg:h-[18px] lg:w-[18px]">
             <path
-              d="M 10 190 C 22 140 18 80 28 20"
+              d="M 12 18 C 7 13 4 10 6 6 C 9 3 12 6 12 8 C 12 6 15 3 18 6 C 20 10 17 13 12 18 Z"
               stroke="#0E8276"
-              strokeWidth="2.5"
+              strokeWidth="2.2"
               strokeLinecap="round"
+              strokeLinejoin="round"
               fill="none"
             />
-            <path d="M 24 35 C 38 28 52 35 48 48 C 38 52 25 44 24 35 Z" fill="#0E8276" opacity="0.9" />
-            <path d="M 22 65 C 10 58 2 65 6 78 C 14 82 22 75 22 65 Z" fill="#0E8276" opacity="0.85" />
-            <path d="M 20 100 C 35 92 48 100 45 114 C 34 118 21 110 20 100 Z" fill="#0E8276" opacity="0.9" />
-            <path d="M 17 135 C 5 128 -2 135 2 148 C 11 152 18 145 17 135 Z" fill="#0E8276" opacity="0.85" />
-            <path d="M 14 165 C 30 158 42 165 40 178 C 30 182 16 174 14 165 Z" fill="#0E8276" opacity="0.9" />
           </svg>
         </div>
 
         {/* 3. Teal organic shape in lower-left corner */}
-        <div className="pointer-events-none absolute -bottom-2 -left-2 z-10 h-16 w-14 sm:h-32 sm:w-28">
+        <div className="pointer-events-none absolute -bottom-2 -left-2 z-10 h-[66px] w-12 xs:w-14 sm:h-[130px] sm:w-28 select-none">
           <svg viewBox="0 0 100 120" fill="none" className="h-full w-full">
             <path
               d="M 0 15 C 50 15 78 55 72 105 C 68 120 35 120 0 120 Z"
@@ -61,119 +61,104 @@ export function HeroBanner() {
           </svg>
         </div>
 
-        {/* 4. Orange botanical branch between text and photo */}
-        <div className="pointer-events-none absolute bottom-10 left-[43%] z-20 hidden md:block lg:left-[45%]">
-          <svg width="45" height="110" viewBox="0 0 45 110" fill="none">
-            <path
-              d="M 6 100 C 14 65 12 35 18 5"
-              stroke="#E27244"
-              strokeWidth="2"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <path
-              d="M 17 17 C 28 10 38 15 35 25 C 26 29 16 23 17 17 Z"
-              stroke="#E27244"
-              strokeWidth="1.4"
-              fill="#E27244"
-              fillOpacity="0.25"
-            />
-            <path
-              d="M 14 43 C 2 35 -6 43 -2 53 C 7 57 14 50 14 43 Z"
-              stroke="#E27244"
-              strokeWidth="1.4"
-              fill="#E27244"
-              fillOpacity="0.25"
-            />
-            <path
-              d="M 13 71 C 26 63 35 69 32 79 C 23 83 13 77 13 71 Z"
-              stroke="#E27244"
-              strokeWidth="1.4"
-              fill="#E27244"
-              fillOpacity="0.25"
-            />
-            <path
-              d="M 9 97 C -1 89 -8 97 -4 107 C 4 111 10 104 9 97 Z"
-              stroke="#E27244"
-              strokeWidth="1.4"
-              fill="#E27244"
-              fillOpacity="0.25"
-            />
-          </svg>
+        {/* 4. Orange/Gold Botanical Leaf near curved image boundary (gold-leaf.png) */}
+        <div className="pointer-events-none absolute left-[42%] xs:left-[41.5%] sm:left-[41%] md:left-[41%] lg:left-[38%] bottom-2 sm:bottom-3 md:bottom-4 z-20 w-7 xs:w-9 sm:w-[67px] md:w-[96px] lg:w-[147px] lg:translate-x-[5px] select-none">
+          <img
+            src={goldLeaf}
+            alt=""
+            aria-hidden="true"
+            className="hero-leaf-drift hero-leaf-drift--gold h-auto w-full object-contain"
+            loading="eager"
+          />
         </div>
 
         {/* ======================================================== */}
         {/* MAIN BANNER LAYOUT: Left Text & Right Photo              */}
         {/* ======================================================== */}
-        <div className="relative z-10 grid min-h-[195px] xs:min-h-[225px] sm:min-h-[280px] md:min-h-[360px] grid-cols-[52%_48%] xs:grid-cols-[51%_49%] sm:grid-cols-[48%_52%] lg:grid-cols-[46%_54%]">
+        <div className="relative z-10 grid min-h-[195px] xs:min-h-[225px] sm:min-h-[280px] md:min-h-[360px] grid-cols-[52%_48%] xs:grid-cols-[51%_49%] sm:grid-cols-[48%_52%] lg:grid-cols-[42.5%_57.5%]">
           {/* LEFT SIDE: Hero Text, Trust Badges, CTA, Social Proof */}
-          <div data-hero-enter="text" className="flex flex-col justify-center px-2 py-2.5 xs:px-3 xs:py-3 sm:px-8 md:py-7 lg:pl-16 lg:pr-4">
+          <div data-hero-enter="text" className="translate-x-0 sm:translate-x-[50px] lg:-translate-x-[10px] flex flex-col justify-center px-2 py-2 xs:px-3 xs:py-2.5 sm:px-8 md:py-7 lg:pl-12 lg:pr-0 lg:w-[116%] lg:max-w-[660px] lg:z-10">
             {/* Heading Container with Doodles */}
-            <div className="relative inline-block max-w-full">
-              {/* Sun Doodle near heading */}
-              <div className="absolute -top-2 right-1 xs:right-2 sm:right-auto sm:left-[310px] md:left-[330px]">
-                <svg width="22" height="22" viewBox="0 0 40 40" fill="none" className="xs:h-6 xs:w-6 sm:h-10 sm:w-10">
-                  <circle cx="20" cy="20" r="8" stroke="#FDB813" strokeWidth="2.2" fill="none" />
-                  <line x1="20" y1="6" x2="20" y2="2" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                  <line x1="30" y1="10" x2="33" y2="7" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                  <line x1="34" y1="20" x2="38" y2="20" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                  <line x1="30" y1="30" x2="33" y2="33" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                  <line x1="20" y1="34" x2="20" y2="38" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                  <line x1="10" y1="30" x2="7" y2="33" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                  <line x1="6" y1="20" x2="2" y2="20" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                  <line x1="10" y1="10" x2="7" y2="7" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
-                </svg>
-              </div>
-
-              {/* Teal Doodle Heart left of "Healthy Daughter" */}
-              <div className="absolute -left-4 top-[24px] hidden sm:block md:-left-7 md:top-[52px]">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="md:h-[22px] md:w-[22px]">
-                  <path
-                    d="M 12 18 C 7 13 4 10 6 6 C 9 3 12 6 12 8 C 12 6 15 3 18 6 C 20 10 17 13 12 18 Z"
-                    stroke="#0E8276"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-
+            <div className="relative w-full max-w-full -translate-y-[15px] sm:-translate-y-[30px]">
               {/* Heading Text */}
-              <h1 className="font-display tracking-tight text-[#0C2340]">
-                <span className="block text-[14px] xs:text-[17px] sm:text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.08]">
-                  Happy Mom,
+              <h1 className="font-display tracking-tight text-[#0C2340] text-center">
+                {/* Line 1: Gentle bent/curved appearance of "Happy Mom," */}
+                <span className="relative flex justify-center items-center text-[15px] xs:text-[19px] sm:text-4xl md:text-[46px] lg:text-[53px] font-bold leading-none select-none">
+                  <span className="inline-block transform -rotate-[3deg] translate-y-[2px] sm:translate-y-[3px]">Happy</span>
+                  <span className="inline-block mx-1 sm:mx-1.5 md:mx-2"></span>
+                  <span className="relative inline-block transform rotate-[3.5deg] translate-y-[2px] sm:translate-y-[3px]">
+                    Mom,
+                    {/* Sun Doodle near Mom, */}
+                    <span className="pointer-events-none absolute -top-3 -right-5 sm:-top-5 sm:-right-8 md:-top-6 md:-right-10">
+                      <svg width="22" height="22" viewBox="0 0 40 40" fill="none" className="xs:h-6 xs:w-6 sm:h-9 sm:w-9 md:h-10 md:w-10">
+                        <circle cx="20" cy="20" r="8" stroke="#FDB813" strokeWidth="2.2" fill="none" />
+                        <line x1="20" y1="6" x2="20" y2="2" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1="30" y1="10" x2="33" y2="7" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1="34" y1="20" x2="38" y2="20" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1="30" y1="30" x2="33" y2="33" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1="20" y1="34" x2="20" y2="38" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1="10" y1="30" x2="7" y2="33" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1="6" y1="20" x2="2" y2="20" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                        <line x1="10" y1="10" x2="7" y2="7" stroke="#FDB813" strokeWidth="2.2" strokeLinecap="round" />
+                      </svg>
+                    </span>
+                  </span>
                 </span>
-                <span className="relative block text-[14px] xs:text-[17px] sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.08] text-[#0E8276] mt-0.5 sm:mt-0">
-                  Healthy Daughter
-                  {/* Yellow/Orange Doodle Flourish Under "Daughter" */}
-                  <svg
-                    className="absolute -bottom-1.5 right-1 sm:-bottom-2 sm:right-16 w-5 h-1.5 xs:w-7 xs:h-2 sm:w-11 sm:h-3"
-                    viewBox="0 0 44 12"
-                    fill="none"
-                  >
-                    <path
-                      d="M 2 4 C 12 10 24 2 32 8 C 36 10 40 8 42 5"
-                      stroke="#F15A24"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      fill="none"
-                    />
-                  </svg>
+
+                {/* Line 2: "Healthy Daughter" with handwritten style, curved angle, compact positioning & doodles */}
+                <span className="relative mt-0.5 sm:-mt-1 md:-mt-1.5 flex justify-center items-center">
+                  {/* Teal Doodle Heart left of "Healthy Daughter" */}
+                  <span className="pointer-events-none mr-1 sm:mr-1.5 md:mr-2 shrink-0 transform -rotate-[8deg] -translate-y-1">
+                    <svg viewBox="0 0 24 24" fill="none" className="h-2.5 w-2.5 xs:h-3 xs:w-3 sm:h-4 sm:w-4 md:h-5 md:w-5">
+                      <path
+                        d="M 12 18 C 7 13 4 10 6 6 C 9 3 12 6 12 8 C 12 6 15 3 18 6 C 20 10 17 13 12 18 Z"
+                        stroke="#0E8276"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                      />
+                    </svg>
+                  </span>
+
+                  {/* Visibly curved handwritten "Healthy Daughter" */}
+                  <span className="relative inline-flex items-center text-[15px] xs:text-[19px] sm:text-4xl md:text-[46px] lg:text-[53px] font-bold leading-none text-[#0E8276] select-none">
+                    <span className="inline-block transform -rotate-[3.2deg] origin-bottom-left translate-y-[1px] sm:translate-y-[2px]">
+                      Healthy
+                    </span>
+                    <span className="inline-block mx-0.5 sm:mx-1"></span>
+                    <span className="relative inline-block transform rotate-[2.5deg] translate-y-[1px] sm:translate-y-[2px]">
+                      Daughter
+
+                      {/* Small gold doodle heart under "Daughter" */}
+                      <span className="pointer-events-none absolute -bottom-1.5 sm:-bottom-2.5 right-0.5 sm:right-1 transform rotate-[10deg]">
+                        <svg viewBox="0 0 24 24" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4">
+                          <path
+                            d="M 12 18 C 7 13 4 10 6 6 C 9 3 12 6 12 8 C 12 6 15 3 18 6 C 20 10 17 13 12 18 Z"
+                            stroke="#FDB813"
+                            strokeWidth="2.2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            fill="none"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </span>
                 </span>
               </h1>
             </div>
 
             {/* Supporting Text */}
-            <p className="mt-1 xs:mt-1.5 sm:mt-3 max-w-[460px] text-[7px] xs:text-[8.5px] sm:text-xs md:text-sm lg:text-[14px] font-semibold leading-tight xs:leading-snug sm:leading-relaxed text-[#1E344F]">
+            <p className="mt-1 xs:mt-1.5 sm:mt-2.5 md:mt-3 max-w-[170px] xs:max-w-[195px] sm:max-w-[460px] lg:max-w-[520px] translate-x-[2px] -translate-y-[1px] sm:translate-x-0 sm:translate-y-0 lg:translate-x-[50px] lg:-translate-y-[4px] text-[10.5px] xs:text-[12px] sm:text-[14px] md:text-[16px] lg:text-[17.5px] font-semibold leading-tight xs:leading-snug sm:leading-relaxed text-[#1E344F]">
               Wholesome nutrition for every beautiful stage of her life — from your bump to her dreams!
             </p>
 
             {/* GROUP: Trust Badges */}
-            <div className="mt-1 xs:mt-1.5 sm:mt-3.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 sm:gap-x-4 sm:gap-y-2 text-[6px] xs:text-[7.5px] sm:text-xs font-bold text-[#0C2340]">
+            <div className="relative left-[10px] sm:left-[35px] lg:left-[40px] mt-1.5 xs:mt-2 sm:mt-3 md:mt-3.5 flex flex-nowrap sm:flex-wrap items-center gap-x-2 gap-y-0.5 sm:gap-x-4 sm:gap-y-1 text-[6.5px] xs:text-[8px] sm:text-xs font-bold text-[#0C2340]">
               {/* Healthy Ingredients */}
               <div className="flex items-center gap-0.5 sm:gap-1.5">
-                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-[15px] sm:w-[15px] shrink-0">
+                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 shrink-0">
                   <path
                     d="M 1 8 C 1 3 7 0 12 0 C 13 5 10 11 5 12 C 1 13 1 8 1 8 Z M 5 12 L 1 16"
                     stroke="#0E8276"
@@ -187,7 +172,7 @@ export function HeroBanner() {
 
               {/* No Preservatives */}
               <div className="flex items-center gap-0.5 sm:gap-1.5">
-                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-[15px] sm:w-[15px] shrink-0">
+                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 shrink-0">
                   <path
                     d="M 5 1 L 11 1 M 8 1 L 8 4 L 2 13 C 1 15 2 16 4 16 L 12 16 C 14 16 15 15 14 13 L 8 4"
                     stroke="#0E8276"
@@ -201,8 +186,8 @@ export function HeroBanner() {
               </div>
 
               {/* Made with Love */}
-              <div className="flex items-center gap-0.5 sm:gap-1.5">
-                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-[15px] sm:w-[15px] shrink-0">
+              <div className="relative left-[20px] flex items-center gap-0.5 sm:gap-1.5">
+                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 shrink-0">
                   <path
                     d="M 8 14 C 3 9 0 6 2 2 C 5 -1 8 2 8 4 C 8 2 11 -1 14 2 C 16 6 13 9 8 14 Z"
                     stroke="#F15A24"
@@ -215,11 +200,11 @@ export function HeroBanner() {
             </div>
 
             {/* GROUP: CTA Buttons */}
-            <div className="mt-1.5 xs:mt-2 sm:mt-4 flex flex-nowrap items-center gap-1 xs:gap-1.5 sm:gap-3">
+            <div className="mt-1.5 xs:mt-2 sm:mt-3.5 md:mt-4 flex flex-nowrap items-center gap-1 xs:gap-1.5 sm:gap-3 lg:translate-x-[50px] lg:-translate-y-[4px]">
               {/* Orange CTA: Shop for Mom */}
               <Link
                 to="/shop?category=Nourish"
-                className="inline-flex items-center gap-1 rounded-full bg-[#F15A24] px-1.5 py-0.5 xs:px-2.5 xs:py-1 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[6.5px] xs:text-[8px] sm:text-xs md:text-sm font-bold text-white shadow-xs transition-all hover:bg-[#D84B18] hover:shadow-md shrink-0 whitespace-nowrap"
+                className="inline-flex items-center gap-0.5 xs:gap-1 rounded-full bg-[#F15A24] px-1.5 py-0.5 xs:px-2.5 xs:py-1 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[9px] xs:text-[10.5px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-bold text-white shadow-xs transition-all hover:bg-[#D84B18] hover:shadow-md shrink-0 whitespace-nowrap"
               >
                 <span>Shop for Mom</span>
                 <ArrowRight className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:size-[15px]" />
@@ -228,7 +213,7 @@ export function HeroBanner() {
               {/* Yellow CTA: Shop for Daughter */}
               <Link
                 to="/shop?category=Celebrate"
-                className="inline-flex items-center gap-1 rounded-full bg-[#FDB813] px-1.5 py-0.5 xs:px-2.5 xs:py-1 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[6.5px] xs:text-[8px] sm:text-xs md:text-sm font-bold text-[#0C2340] shadow-xs transition-all hover:bg-[#E9A709] hover:shadow-md shrink-0 whitespace-nowrap"
+                className="inline-flex items-center gap-0.5 xs:gap-1 rounded-full bg-[#FDB813] px-1.5 py-0.5 xs:px-2.5 xs:py-1 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[9px] xs:text-[10.5px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-bold text-[#0C2340] shadow-xs transition-all hover:bg-[#E9A709] hover:shadow-md shrink-0 whitespace-nowrap"
               >
                 <span>Shop for Daughter</span>
                 <ArrowRight className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:size-[15px]" />
@@ -236,8 +221,8 @@ export function HeroBanner() {
             </div>
 
             {/* Social Proof */}
-            <div className="mt-1 xs:mt-1.5 sm:mt-3.5 flex items-center gap-1 xs:gap-1.5 sm:gap-2.5 text-[6px] xs:text-[7.5px] sm:text-xs font-bold text-[#0C2340]">
-              <div className="flex -space-x-1 sm:-space-x-2">
+            <div className="relative left-[10px] lg:left-[20px] mt-1.5 xs:mt-2 sm:mt-3 md:mt-3.5 flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 text-[6.5px] xs:text-[8px] sm:text-xs font-bold text-[#0C2340]">
+              <div className="flex -space-x-1 sm:-space-x-1.5">
                 <span className="flex h-2.5 w-2.5 xs:h-3.5 xs:w-3.5 sm:h-5 sm:w-5 md:h-6 md:w-6 items-center justify-center rounded-full border border-[#FFFDF7] bg-[#F8C3CE] text-[4.5px] xs:text-[6px] sm:text-[8px] md:text-[9px] shadow-xs">
                   👩🏽
                 </span>
@@ -274,7 +259,7 @@ export function HeroBanner() {
               <img
                 src={heroMomDaughter}
                 alt="Mother and daughter sharing a wholesome snack in a bright kitchen"
-                className="h-full w-full object-cover object-[72%_center]"
+                className="hero-photo-drift h-full w-full object-cover object-[72%_center]"
                 fetchPriority="high"
                 loading="eager"
               />
