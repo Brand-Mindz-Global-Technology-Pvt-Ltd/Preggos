@@ -45,6 +45,7 @@ export function ProductBundles() {
           </div>
           <Link
             to="/shop"
+            data-scroll-reveal
             className="text-xs font-bold text-[#ef6241] hover:text-[#d84b18] transition inline-flex items-center gap-1"
           >
             <span>View All Bundles</span>
@@ -52,13 +53,13 @@ export function ProductBundles() {
           </Link>
         </div>
 
-        <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3">
+        <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:grid-cols-3 sm:gap-3">
           {bundles.map((bundle) => (
             <Link
               key={bundle.title}
               to="/shop"
-              data-scroll-reveal
-              className={`motion-bundle-card ${bundle.color} relative flex flex-col sm:flex-row min-h-[140px] sm:min-h-[105px] items-center text-center sm:text-left gap-1.5 sm:gap-3 overflow-hidden rounded-xl sm:rounded-2xl p-2.5 sm:p-3 transition hover:-translate-y-1 shadow-xs last:col-span-2 sm:last:col-span-1 md:last:col-span-1 last:flex-row last:text-left last:items-center last:min-h-[90px] sm:last:min-h-[105px]`}
+              data-scroll-card
+              className={`motion-bundle-card ${bundle.color} relative flex flex-row min-h-[92px] sm:min-h-[105px] items-center text-left gap-2.5 sm:gap-3 overflow-hidden rounded-xl sm:rounded-2xl p-2.5 sm:p-3 transition hover:-translate-y-1 shadow-xs last:col-span-1 sm:last:col-span-2 md:last:col-span-1`}
             >
               <span className="absolute right-2 top-2 sm:right-3 sm:top-2 rounded-full bg-white/85 px-1.5 py-0.5 text-[8px] sm:text-[9px] font-black text-[#ef6241]">
                 {bundle.badge}
@@ -75,14 +76,14 @@ export function ProductBundles() {
                   }
                 }}
               />
-              <div className="min-w-0 w-full sm:w-auto pr-0 sm:pr-2">
-                <h3 className="truncate text-[11px] sm:text-xs font-black text-[#12294a]">
+              <div className="min-w-0 flex-1 pr-2">
+                <h3 className="line-clamp-1 text-xs font-black text-[#12294a]">
                   {bundle.title}
                 </h3>
-                <p className="mt-0.5 sm:mt-1 line-clamp-2 text-[9px] sm:text-[10px] leading-tight sm:leading-4 text-[#50617a]">
+                <p className="mt-0.5 sm:mt-1 line-clamp-2 text-[10px] leading-tight sm:leading-4 text-[#50617a]">
                   {bundle.detail}
                 </p>
-                <span className="mt-1 sm:mt-1.5 inline-block text-[9px] sm:text-[10px] font-bold text-[#ef6241]">
+                <span className="mt-1 sm:mt-1.5 inline-block text-[10px] font-bold text-[#ef6241]">
                   Shop Now →
                 </span>
               </div>

@@ -19,14 +19,11 @@ export const homeAssets = {
     green: greenLeaf,
   },
   categories: [
-    //  objectFit / objectPosition / clipTopPct — pixel-accurate per PNG analysis
-    { title: "Pregnancy",         image: pregnancy,        color: "bg-[#f8c3ce]", text: "For every trimester",  objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0  },
-    { title: "Postnatal",         image: postnatal,        color: "bg-[#f7b3b8]", text: "Gentle support",       objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0  },
-    { title: "Lactation Support", image: lactationSupport, color: "bg-[#f7ca68]", text: "Nourish your journey", objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0  },
-    // healthy-snacking: real transparent gap at row 47/441 (10.7%) → clip just past it
-    { title: "Healthy Snacking",  image: healthySnacking,  color: "bg-[#b7dfc9]", text: "Feel-good bites",      objectFit: "cover" as const, objectPosition: "center top",  clipTopPct: 12 },
-    // kids-nutrition: fragment and main subject are contiguous (no gap) → object-cover focused on main subject
-    { title: "Kids Nutrition",    image: kidsNutrition,    color: "bg-[#f5c65c]", text: "Happy growing",        objectFit: "cover" as const, objectPosition: "center top",  clipTopPct: 9 },
-    { title: "Women's Wellness",  image: womensWellness,   color: "bg-[#b8d3f1]", text: "Care for you",        objectFit: "cover" as const, objectPosition: "center top",  clipTopPct: 12 },
+    { title: "Pregnancy",         image: pregnancy,        color: "bg-[#d8b4e2]", text: "For every trimester",  objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0,  arrowColor: "#9b6b9e" as const },
+    { title: "Postnatal",         image: postnatal,        color: "bg-[#f7b3b8]", text: "Gentle support",       objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0,  arrowColor: "#ef6241" as const },
+    { title: "Lactation Support", image: lactationSupport, color: "bg-[#f7ca68]", text: "Nourish your journey", objectFit: "contain" as const, objectPosition: "center top",  clipTopPct: 0,  arrowColor: "#f7ca68" as const },
+    { title: "Healthy Snacking",  image: healthySnacking,  color: "bg-[#b7dfc9]", text: "Feel-good bites",      objectFit: "cover" as const,   objectPosition: "center 25%", clipTopPct: 8,  arrowColor: "#6b9e7d" as const },
+    { title: "Kids Nutrition",    image: kidsNutrition,    color: "bg-[#f5c65c]", text: "Happy growing",        objectFit: "cover" as const,   objectPosition: "center 30%", clipTopPct: 5,  arrowColor: "#f5c65c" as const },
+    { title: "Women's Wellness",  image: womensWellness,   color: "bg-[#b8d3f1]", text: "Care for you",        objectFit: "cover" as const,   objectPosition: "center 25%", clipTopPct: 8,  arrowColor: "#7ba8d8" as const },
   ],
 } as const;

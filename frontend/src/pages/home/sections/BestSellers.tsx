@@ -83,7 +83,7 @@ export function BestSellers() {
             </p>
           </div>
 
-          <div className="mt-3 text-center sm:absolute sm:right-0 sm:bottom-1 sm:mt-0 sm:text-right">
+          <div data-scroll-reveal className="mt-3 text-center sm:absolute sm:right-0 sm:bottom-1 sm:mt-0 sm:text-right">
             <Link
               to="/shop"
               className="group inline-flex items-center gap-1 text-xs font-bold text-[#F15A24] transition hover:text-[#D84B18] sm:text-sm"
@@ -103,7 +103,7 @@ export function BestSellers() {
             return (
               <article
                 key={p.id}
-                data-scroll-reveal
+                data-scroll-card
                 className="motion-product-card group relative flex flex-col justify-between rounded-xl sm:rounded-2xl bg-white p-2.5 sm:p-5 shadow-[0_4px_24px_rgba(16,38,80,0.06)] border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(16,38,80,0.12)]"
               >
                 <div>
@@ -151,7 +151,7 @@ export function BestSellers() {
 
                   {/* Product Name */}
                   <Link to={`/product/${p.id}`} className="block">
-                    <h3 className="line-clamp-1 text-xs font-bold text-[#0C2340] sm:text-base transition hover:text-[#F15A24]">
+                    <h3 className="line-clamp-2 min-h-[2rem] sm:min-h-[2.5rem] text-xs font-bold text-[#0C2340] sm:text-base transition hover:text-[#F15A24]">
                       {p.name}
                     </h3>
                   </Link>

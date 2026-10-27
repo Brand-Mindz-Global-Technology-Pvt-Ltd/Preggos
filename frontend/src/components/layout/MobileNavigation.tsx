@@ -6,13 +6,13 @@ export function MobileNavigation({ close }: { close: () => void }) {
     <>
       {/* Tap-outside backdrop */}
       <div
-        className="fixed inset-0 top-[52px] z-40 bg-black/25 backdrop-blur-[2px] md:hidden"
+        className="fixed inset-0 top-[52px] z-40 bg-black/25 backdrop-blur-[2px] lg:hidden"
         onClick={close}
         aria-hidden="true"
       />
 
       {/* Navigation Drawer */}
-      <nav className="relative z-50 border-t border-slate-100 bg-white px-5 py-4 shadow-xl md:hidden">
+      <nav className="relative z-50 border-t border-slate-100 bg-white px-5 py-4 shadow-xl lg:hidden">
         <div className="grid gap-1 font-bold text-[#12294a]">
           <Link
             to="/"

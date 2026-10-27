@@ -16,7 +16,7 @@ export function Header() {
         {/* Left: Hamburger Button (Mobile) + Brand Logo */}
         <div className="flex items-center gap-2 sm:gap-3">
           <button
-            className="p-1 -ml-1 text-[#12294a] transition hover:text-[#ef6241] md:hidden focus:outline-none"
+            className="p-1 -ml-1 text-[#12294a] transition hover:text-[#ef6241] lg:hidden focus:outline-none"
             aria-label={menu ? "Close navigation" : "Open navigation"}
             onClick={() => setMenu(!menu)}
           >
@@ -43,11 +43,11 @@ export function Header() {
 
         {/* Right: Search, Wishlist, Account, Cart */}
         <div className="flex items-center gap-2 sm:gap-3 text-[#12294a]">
-          <div className="hidden items-center rounded-full border border-[#e3e3e3] px-3 py-1.5 xl:flex">
+          <div className="hidden items-center rounded-full border border-[#e3e3e3] px-3 py-1.5 md:flex">
             <input
               aria-label="Search products"
               placeholder="Search for healthy products..."
-              className="w-32 bg-transparent text-[10px] outline-none"
+              className="w-28 md:w-32 lg:w-36 bg-transparent text-[10px] outline-none"
             />
             <Search size={14} />
           </div>

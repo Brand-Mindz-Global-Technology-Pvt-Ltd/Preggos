@@ -92,7 +92,7 @@ export function Testimonials() {
             {reviews.map((review) => (
               <article
                 key={review.name}
-                data-scroll-reveal
+                data-scroll-card
                 className={`motion-testimonial-card ${review.bg} ${review.border} ${review.shape} flex min-h-[138px] w-[86%] sm:w-auto shrink-0 sm:shrink snap-center flex-col justify-between border p-3.5 sm:p-4 shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-0.5`}
               >
                 <div>

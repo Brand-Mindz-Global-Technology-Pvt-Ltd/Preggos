@@ -4,47 +4,55 @@ import { homeAssets } from "../../../data/homeAssets";
 
 export function BrandStoryBanner() {
   return (
-    <section className="relative px-3 py-4 sm:px-6 md:py-10 lg:px-8">
-      {/* 1440px max width container with rounded-[20px] - rounded-[36px] banner card */}
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[20px] xs:rounded-[24px] sm:rounded-[28px] md:rounded-[36px] bg-[#FFFBF2] shadow-[0_4px_24px_rgba(16,38,80,0.06)] border border-[#F5E8D3]/80">
+    <section className="relative px-3 py-4 sm:px-6 md:py-8 lg:px-8">
+      {/* 1440px max width container with rounded-[20px] - rounded-[32px] banner card */}
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[20px] xs:rounded-[24px] sm:rounded-[28px] md:rounded-[32px] bg-gradient-to-r from-[#FFF5E6] via-[#FFF9F0] to-[#FFFBF2] shadow-[0_4px_24px_rgba(16,38,80,0.06)] border border-[#F5E8D3]/80">
         {/* ======================================================== */}
         {/* 1. DECORATIVE CORNER & EDGE SHAPES                        */}
         {/* ======================================================== */}
-        {/* Top-Left: Large golden yellow sun/blob with doodle */}
-        <div className="pointer-events-none absolute -left-4 -top-4 z-10 h-16 w-16 xs:h-20 xs:w-20 sm:-left-6 sm:-top-6 sm:h-52 sm:w-52 md:h-60 md:w-60" aria-hidden="true">
-          <svg viewBox="0 0 200 200" fill="none" className="h-full w-full">
+        {/* Top-Left: Warm golden sun/blob with hand-drawn white doodle */}
+        <div
+          className="pointer-events-none absolute -left-2 -top-2 z-10 h-20 w-20 xs:h-24 xs:w-24 sm:-left-3 sm:-top-3 sm:h-36 sm:w-36 md:h-44 md:w-44 lg:h-46 lg:w-46"
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 180 180" fill="none" className="h-full w-full">
             {/* Organic Golden Sun Shape */}
             <path
-              d="M 0 0 L 170 0 C 175 60 160 110 120 145 C 80 175 30 185 0 180 Z"
+              d="M 0 0 L 150 0 C 154 50 140 95 105 130 C 70 160 25 168 0 164 Z"
               fill="#F5A623"
             />
-            {/* White Doodle flower/rays inside sun */}
-            <g transform="translate(90, 70)" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" opacity="0.9">
-              <path d="M 0 -12 L 0 12 M -12 0 L 12 0" />
-              <path d="M -8 -8 L 8 8 M -8 8 L 8 -8" />
-              <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+            {/* White Hand-drawn Doodle (Sprout / Flying Wings) inside sun */}
+            <g transform="translate(68, 56) rotate(-12)" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none">
+              <path d="M -6 12 C -4 4, 2 -4, 10 -6 C 8 4, 2 10, -6 12 Z" />
+              <path d="M 4 -2 C 8 -10, 16 -13, 21 -11 C 18 -4, 12 1, 4 -2 Z" />
+              <path d="M -8 16 C -2 10, 6 2, 12 -6" strokeWidth="2" />
             </g>
           </svg>
         </div>
 
-        {/* Bottom-Left: Teal organic wave shape & green leaf PNG */}
-        <div className="pointer-events-none absolute -bottom-2 -left-2 z-10 h-14 w-14 xs:h-18 xs:w-18 sm:-bottom-4 sm:-left-4 sm:h-44 sm:w-44" aria-hidden="true">
-          <svg viewBox="0 0 160 160" fill="none" className="h-full w-full">
+        {/* Bottom-Left: Mint/Teal organic corner blob & approved green leaf PNG */}
+        <div
+          className="pointer-events-none absolute -bottom-2 -left-2 z-10 h-20 w-20 xs:h-24 xs:w-24 sm:-bottom-3 sm:-left-3 sm:h-36 sm:w-36 md:h-40 md:w-40"
+        >
+          <svg viewBox="0 0 140 140" fill="none" className="h-full w-full">
             {/* Mint/Teal organic corner blob */}
             <path
-              d="M 0 60 C 40 50 85 85 95 125 C 100 145 95 155 90 160 L 0 160 Z"
+              d="M 0 45 C 35 38 75 68 85 105 C 90 122 86 132 82 140 L 0 140 Z"
               fill="#BCE4DD"
             />
           </svg>
           <img
             src={homeAssets.leaves.green}
             alt=""
-            className="home-doodle-drift absolute bottom-2 left-2 h-12 w-12 xs:h-16 xs:w-16 sm:h-28 sm:w-28 object-contain"
+            className="home-doodle-drift absolute bottom-1.5 left-1.5 h-[60px] w-[60px] xs:h-[70px] xs:w-[70px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] object-contain"
           />
         </div>
 
-        {/* Pink leaf PNG between text and photo */}
-        <div className="pointer-events-none absolute bottom-0 left-[48%] xs:left-[49%] sm:left-[45%] md:left-[43%] lg:left-[45%] z-20 h-10 w-5 xs:h-12 xs:w-6 sm:h-20 sm:w-9" aria-hidden="true">
+        {/* Bottom-Center: Approved Pink Leaf PNG (near dividing curve) */}
+        <div
+          className="pointer-events-none absolute bottom-0 left-[42%] xs:left-[43%] sm:left-[43%] md:left-[43%] lg:left-[43.5%] z-20 h-12 w-6 xs:h-14 xs:w-7 sm:h-20 sm:w-10 md:h-22 md:w-11"
+          aria-hidden="true"
+        >
           <img
             src={homeAssets.leaves.pink}
             alt=""
@@ -53,155 +61,232 @@ export function BrandStoryBanner() {
         </div>
 
         {/* Bottom-Right Teal Corner Wave */}
-        <div className="pointer-events-none absolute -bottom-3 -right-3 z-20 h-12 w-12 xs:h-16 xs:w-16 sm:-bottom-6 sm:-right-6 sm:h-36 sm:w-36" aria-hidden="true">
+        <div
+          className="pointer-events-none absolute -bottom-1 -right-1 z-20 h-14 w-14 xs:h-16 xs:w-16 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-36 lg:w-36"
+          aria-hidden="true"
+        >
           <svg viewBox="0 0 120 120" fill="none" className="h-full w-full">
             <path
-              d="M 120 20 C 80 30 45 70 35 110 C 30 115 30 120 30 120 L 120 120 Z"
+              d="M 120 35 C 92 40 55 75 42 120 L 120 120 Z"
               fill="#0E8276"
             />
           </svg>
         </div>
 
+        {/* Extra Decorative Small Hearts on Cream Background (Safely positioned across desktop & mobile) */}
+        {/* Heart 1: Soft Gold above heading */}
+        <svg
+          className="pointer-events-none absolute top-1.5 left-[24%] xs:top-2 xs:left-[26%] sm:top-3.5 sm:left-[27%] z-10 text-[#F5A623] h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3 sm:w-3 -rotate-12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+        </svg>
+
+        {/* Heart 2: Warm Coral near top curve */}
+        <svg
+          className="pointer-events-none absolute top-2 left-[40%] xs:top-2.5 xs:left-[41%] sm:top-4.5 sm:left-[41.5%] z-10 text-[#E85D3F] h-2 w-2 sm:h-2.5 sm:w-2.5 rotate-12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+        </svg>
+
+        {/* Heart 3: Soft Gold middle right (visible where space permits, clear of text) */}
+        <svg
+          className="pointer-events-none absolute top-[28%] left-[42%] sm:top-[46%] sm:left-[39.5%] z-10 text-[#F5A623] h-2 w-2 sm:h-2.5 sm:w-2.5 -rotate-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+        </svg>
+
+        {/* Heart 4: Warm Coral near bottom CTA / curve space */}
+        <svg
+          className="pointer-events-none absolute bottom-1.5 left-[26%] xs:bottom-2 xs:left-[28%] sm:bottom-4.5 sm:left-[34.5%] z-10 text-[#E85D3F] h-2 w-2 sm:h-2.5 sm:w-2.5 rotate-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+        </svg>
+
         {/* ======================================================== */}
         {/* 2. MAIN LAYOUT: Left Content & Right Photo               */}
         {/* ======================================================== */}
-        <div className="relative z-10 grid grid-cols-[52%_48%] xs:grid-cols-[50%_50%] sm:grid-cols-[48%_52%] lg:grid-cols-[46%_54%] min-h-[160px] xs:min-h-[185px] sm:min-h-[250px] md:min-h-[280px]">
+        <div className="relative z-10 grid grid-cols-[48%_52%] sm:grid-cols-[46%_54%] lg:grid-cols-[45%_55%] min-h-[160px] xs:min-h-[175px] sm:min-h-[220px] md:min-h-[245px] lg:h-[255px]">
           {/* Left Column: Heading, Supporting Text, CTA */}
-          <div className="flex flex-col justify-center px-2.5 py-3 xs:px-4 xs:py-3.5 sm:px-10 md:py-8 lg:pl-20 lg:pr-6 translate-x-[25px] sm:translate-x-[45px]">
-            {/* Heading Container with Doodles */}
+          <div className="flex flex-col justify-center px-3 py-3 xs:px-4 xs:py-3.5 sm:px-8 sm:py-5 md:pl-16 md:pr-4 lg:pl-22 lg:pr-4 translate-x-[16px] min-[375px]:translate-x-[24px] min-[430px]:translate-x-[30px] sm:translate-x-[55px]">
+            {/* Heading Container with Stepped Layout & Doodles */}
             <div className="relative">
-              <h2 data-scroll-reveal className="font-display tracking-tight">
-                <span className="block text-[20px] xs:text-[22px] sm:text-[40px] md:text-[46px] lg:text-[52px] font-black text-[#A03E26] leading-[1.08]">
+              <h2 data-scroll-reveal className="font-display">
+                {/* Line 1: Healthy Habits */}
+                <span className="block text-[16px] min-[375px]:text-[19px] min-[390px]:text-[21px] min-[430px]:text-[23px] sm:text-[36px] md:text-[40px] lg:text-[44px] font-bold text-[#A03E26] leading-none tracking-tight">
                   Healthy Habits
                 </span>
-                <span className="relative block text-[20px] xs:text-[22px] sm:text-[40px] md:text-[46px] lg:text-[54px] font-black text-[#0E7870] leading-[1.08] mt-0.5">
-                  Start Together
-                  {/* Small gold heart doodle above/right */}
+
+                {/* Line 2: Start Together (stepped right, no apostrophe mark) */}
+                <span className="relative inline-flex items-center text-[17px] min-[375px]:text-[20px] min-[390px]:text-[22px] min-[430px]:text-[24px] sm:text-[38px] md:text-[42px] lg:text-[46px] font-bold text-[#0E7870] leading-none tracking-tight ml-3.5 min-[375px]:ml-5 min-[390px]:ml-6 sm:ml-10 md:ml-14 mt-0.5 sm:mt-1">
+                  <span>Start Together</span>
+
+                  {/* Golden Heart Doodle to the right of Together */}
                   <svg
-                    className="absolute -top-1.5 right-1 xs:right-2 sm:-top-3 sm:right-12 md:right-20 text-[#F5A623] h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-4 sm:w-4"
+                    className="ml-2 sm:ml-3 h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#F5A623] inline-block shrink-0"
                     viewBox="0 0 24 24"
                     fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     aria-hidden="true"
                   >
-                    <path
-                      d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  {/* Small coral heart doodle below */}
-                  <svg
-                    className="absolute -bottom-1 right-0 xs:right-1 sm:-bottom-2.5 sm:right-6 md:right-12 text-[#E85D3F] h-1.5 w-1.5 xs:h-2 xs:w-2 sm:h-3.5 sm:w-3.5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
                   </svg>
                 </span>
               </h2>
+
+              {/* Small Coral Heart Doodle floating below-right of Together */}
+              <svg
+                className="pointer-events-none absolute -bottom-2 right-12 xs:right-16 sm:-bottom-2.5 sm:right-20 md:right-24 text-[#E85D3F] h-2 w-2 sm:h-3 sm:w-3"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+              </svg>
             </div>
 
-            {/* Supporting Text */}
-            <p data-scroll-reveal className="mt-1 xs:mt-1.5 sm:mt-3.5 max-w-[320px] text-[13px] xs:text-[14px] sm:text-[22px] md:text-[24px] font-semibold leading-tight xs:leading-snug sm:leading-relaxed text-[#1C324E]">
+            {/* Supporting Text - Exactly 2 clean editable lines */}
+            <p
+              data-scroll-reveal
+              className="mt-1 xs:mt-1.5 sm:mt-2.5 max-w-[340px] text-[9.5px] min-[375px]:text-[10.5px] min-[390px]:text-[11px] min-[430px]:text-[11.5px] sm:text-[15px] md:text-[15.5px] lg:text-[16px] font-medium leading-[1.3] min-[375px]:leading-[1.35] text-[#1C324E]"
+            >
               Because the choices you make today,
-              <br className="inline" /> shape her tomorrow.
+              <br />
+              shape her tomorrow.
             </p>
 
             {/* CTA Button */}
-            <div data-scroll-reveal className="mt-1.5 xs:mt-2.5 sm:mt-5">
+            <div data-scroll-reveal className="mt-2 xs:mt-2.5 sm:mt-3.5">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-1 sm:gap-2 rounded-full bg-[#0E7870] px-2 py-0.5 xs:px-3 xs:py-1 sm:px-6 sm:py-2.5 text-[12px] xs:text-[13px] sm:text-[22px] md:text-[24px] font-bold text-white shadow-xs transition-all duration-200 hover:bg-[#0A5A53] hover:shadow-md active:scale-[0.98] whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#0E7870] px-3.5 py-1 min-[375px]:px-4 min-[375px]:py-1.5 sm:px-5 sm:py-2 text-[9.5px] min-[375px]:text-[10px] min-[390px]:text-[10.5px] min-[430px]:text-[11px] sm:text-[15px] md:text-[15.5px] font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#0A5A53] hover:shadow-md active:scale-[0.98] whitespace-nowrap"
               >
                 <span>Explore Our Story</span>
-                <ArrowRight className="h-4 w-4 xs:h-4.5 xs:w-4.5 sm:h-5 sm:w-5 stroke-[2.5]" />
+                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 stroke-[2.5]" />
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Lifestyle Photo with Organic Inward Curve & Speech Bubbles */}
-          <div className="relative h-full min-h-[160px] xs:min-h-[185px] sm:min-h-[250px] md:min-h-full w-full">
-            {/* SVG Organic Clip Path */}
+          {/* Right Column: Lifestyle Photo with Organic Inward S-Curve & Dashed Speech Bubbles */}
+          <div className="relative h-full w-full overflow-hidden">
+            {/* SVG Organic S-Curve Clip Path: Preserves potted plant & gives gentle natural curve */}
             <svg className="pointer-events-none absolute h-0 w-0" aria-hidden="true">
               <defs>
                 <clipPath id="storyOrganicClip" clipPathUnits="objectBoundingBox">
-                  <path d="M 0.1 0 L 1 0 L 1 1 L 0 1 C 0 0.85 0.05 0.72 0.11 0.58 C 0.16 0.45 0.17 0.32 0.14 0.2 C 0.12 0.1 0.11 0.04 0.1 0 Z" />
+                  <path d="M 0.04 0 C 0.05 0.15, 0.08 0.28, 0.07 0.42 C 0.06 0.60, 0.01 0.76, 0.02 0.88 C 0.02 0.94, 0.03 0.98, 0.04 1 L 1 1 L 1 0 Z" />
                 </clipPath>
               </defs>
             </svg>
 
-            {/* Clipped Image Container - responsive organic clip on desktop and mobile */}
+            {/* Clipped Image Container */}
             <div data-scroll-reveal className="relative h-full w-full overflow-hidden story-organic-clip">
               <img
                 src={homeAssets.story.src}
                 alt={homeAssets.story.alt}
-                className="h-full w-full object-cover object-[70%_center]"
+                className="h-full w-full object-cover object-[68%_33%]"
                 loading="lazy"
               />
             </div>
 
-            {/* Speech Bubble 1: "For your changing needs" (Teal/Blue, Left) */}
-            <div className="absolute left-[1%] xs:left-[2%] top-[6%] xs:top-[8%] z-30 scale-[0.48] xs:scale-[0.58] sm:scale-85 md:scale-100 origin-top-left md:left-[2%] lg:left-[4%]">
-              <div className="relative flex flex-col items-center justify-center rounded-full border-2 border-[#38B2AC] bg-white/95 px-3 py-1.5 xs:px-3.5 xs:py-2 sm:px-4 sm:py-2.5 shadow-md backdrop-blur-sm">
-                {/* Top Heart */}
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="text-[#0E7870] mb-0.5">
+            {/* Speech Bubble 1: "For your changing needs" (Cyan/Teal, Left, Dashed border & tail, shifted 55px right) */}
+            <div data-scroll-reveal className="pointer-events-none absolute left-[2%] xs:left-[3%] sm:left-[4%] top-[8%] sm:top-[10%] z-30 scale-[0.58] xs:scale-[0.68] sm:scale-90 md:scale-100 origin-top-left translate-x-[55px]">
+              <div className="relative w-[116px] h-[78px]">
+                {/* SVG Bubble with Seamless Dashed Border & Triangular Tail pointing down-right */}
+                <svg viewBox="0 0 116 78" className="absolute inset-0 h-full w-full overflow-visible drop-shadow-[0_2px_8px_rgba(14,120,112,0.12)]">
                   <path
-                    d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
+                    d="M 30 6 L 86 6 C 100 6, 110 17, 110 32 C 110 47, 100 58, 86 58 L 78 58 L 82 74 L 66 58 L 30 58 C 16 58, 6 47, 6 32 C 6 17, 16 6, 30 6 Z"
+                    fill="#FFFFFF"
+                    stroke="#00B4D8"
+                    strokeWidth="1.8"
+                    strokeDasharray="4 3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
-                {/* Text */}
-                <p className="font-display text-[11px] font-bold leading-tight text-[#0E7870] sm:text-xs text-center whitespace-nowrap">
-                  For your<br />changing needs
-                </p>
-                {/* Bottom Heart */}
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="text-[#0E7870] mt-0.5">
-                  <path
-                    d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  />
-                </svg>
-                {/* Speech Bubble Tail pointing down-right */}
-                <div className="absolute -bottom-2 right-4 h-2.5 w-2.5 rotate-45 border-b-2 border-r-2 border-[#38B2AC] bg-white" />
+
+                {/* Content inside Bubble - fully editable React/HTML */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center pb-5 pt-0.5">
+                  {/* Top Heart */}
+                  <svg width="10" height="9" viewBox="0 0 24 24" fill="none" stroke="#0E7870" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="mb-0.5">
+                    <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+                  </svg>
+                  {/* Text */}
+                  <p className="font-display text-[9.5px] min-[375px]:text-[10.5px] min-[390px]:text-[11px] min-[430px]:text-[11.5px] sm:text-[14px] font-bold leading-[1.05] sm:leading-[1.08] text-[#0E7870] text-center whitespace-nowrap">
+                    For your<br />changing needs
+                  </p>
+                  {/* Bottom Heart */}
+                  <svg width="10" height="9" viewBox="0 0 24 24" fill="none" stroke="#0E7870" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5">
+                    <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+                  </svg>
+                </div>
               </div>
             </div>
 
-            {/* Speech Bubble 2: "For her growing years" (Pink/Magenta, Right) */}
-            <div className="absolute right-[1%] xs:right-[2%] top-[6%] xs:top-[8%] z-30 scale-[0.48] xs:scale-[0.58] sm:scale-85 md:scale-100 origin-top-right md:right-[6%] lg:right-[10%]">
-              <div className="relative flex flex-col items-center justify-center rounded-2xl border-2 border-[#F06292] bg-white/95 px-2.5 py-1.5 xs:px-3 xs:py-2 sm:px-4 sm:py-2.5 shadow-md backdrop-blur-sm">
-                {/* Top Heart */}
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="text-[#C2185B] mb-0.5">
+            {/* Speech Bubble 2: "For her growing years" (Magenta/Pink, Right, Dashed border & tail, shifted 55px right) */}
+            <div data-scroll-reveal className="pointer-events-none absolute right-[8%] xs:right-[9%] sm:right-[11%] top-[8%] sm:top-[10%] z-30 scale-[0.58] xs:scale-[0.68] sm:scale-90 md:scale-100 origin-top-right translate-x-[55px]">
+              <div className="relative w-[116px] h-[78px]">
+                {/* SVG Bubble with Seamless Dashed Border & Triangular Tail pointing down-left */}
+                <svg viewBox="0 0 116 78" className="absolute inset-0 h-full w-full overflow-visible drop-shadow-[0_2px_8px_rgba(233,30,99,0.12)]">
                   <path
-                    d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
+                    d="M 22 6 L 94 6 C 104 6, 110 14, 110 24 L 110 40 C 110 50, 104 58, 94 58 L 48 58 L 34 74 L 38 58 L 22 58 C 12 58, 6 50, 6 40 L 6 24 C 6 14, 12 6, 22 6 Z"
+                    fill="#FFFFFF"
+                    stroke="#E91E63"
+                    strokeWidth="1.8"
+                    strokeDasharray="4 3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
-                {/* Text */}
-                <p className="font-display text-[11px] font-bold leading-tight text-[#C2185B] sm:text-xs text-center whitespace-nowrap">
-                  For her<br />growing years
-                </p>
-                {/* Bottom Heart */}
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="text-[#C2185B] mt-0.5">
-                  <path
-                    d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  />
-                </svg>
-                {/* Speech Bubble Tail pointing down-left */}
-                <div className="absolute -bottom-2 left-4 h-2.5 w-2.5 rotate-45 border-b-2 border-r-2 border-[#F06292] bg-white" />
+
+                {/* Content inside Bubble - fully editable React/HTML */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center pb-5 pt-0.5">
+                  {/* Top Heart */}
+                  <svg width="10" height="9" viewBox="0 0 24 24" fill="none" stroke="#C2185B" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="mb-0.5">
+                    <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+                  </svg>
+                  {/* Text */}
+                  <p className="font-display text-[9.5px] min-[375px]:text-[10.5px] min-[390px]:text-[11px] min-[430px]:text-[11.5px] sm:text-[14px] font-bold leading-[1.05] sm:leading-[1.08] text-[#C2185B] text-center whitespace-nowrap">
+                    For her<br />growing years
+                  </p>
+                  {/* Bottom Heart */}
+                  <svg width="10" height="9" viewBox="0 0 24 24" fill="none" stroke="#C2185B" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5">
+                    <path d="M 12 19 C 6.5 13.5 3.5 10 5.5 5.5 C 7.5 2 11.5 4.5 12 6.5 C 12.5 4.5 16.5 2 18.5 5.5 C 20.5 10 17.5 13.5 12 19 Z" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -210,4 +295,5 @@ export function BrandStoryBanner() {
     </section>
   );
 }
+
 export default BrandStoryBanner;

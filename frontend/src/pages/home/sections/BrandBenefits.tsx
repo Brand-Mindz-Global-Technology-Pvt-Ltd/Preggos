@@ -229,7 +229,7 @@ export function BrandBenefits() {
           {benefits.map((b) => (
             <div
               key={b.title}
-              data-scroll-reveal
+              data-scroll-card
               className={`motion-benefit-card ${b.bg} flex h-[62px] sm:h-[68px] items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl px-2.5 sm:px-3.5 py-1.5 sm:py-2 transition-transform duration-200 hover:-translate-y-0.5`}
             >
               <div className="shrink-0 scale-90 sm:scale-100">{b.icon}</div>
