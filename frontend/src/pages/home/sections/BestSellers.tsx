@@ -59,7 +59,7 @@ export function BestSellers() {
         {/* Header: Centered Title + Subtitle with Top-Right "View All Products →" */}
         <div className="relative mb-8 sm:mb-10">
           <div className="text-center">
-            <h2 data-scroll-reveal className="font-display text-3xl font-black tracking-tight text-[#0C2340] sm:text-4xl">
+            <h2 data-scroll-reveal className="font-display text-3xl font-bold tracking-tight text-[#0C2340] sm:text-4xl">
               Bestsellers You’ll Love{" "}
               <svg
                 className="-mt-1 ml-1 inline-block rotate-6 text-[#F15A24]"
@@ -86,7 +86,7 @@ export function BestSellers() {
           <div data-scroll-reveal className="mt-3 text-center sm:absolute sm:right-0 sm:bottom-1 sm:mt-0 sm:text-right">
             <Link
               to="/shop"
-              className="group inline-flex items-center gap-1 text-xs font-bold text-[#F15A24] transition hover:text-[#D84B18] sm:text-sm"
+              className="group inline-flex items-center gap-1 text-xs font-semibold text-[#F15A24] transition hover:text-[#D84B18] sm:text-sm"
             >
               <span>View All Products</span>
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
@@ -184,7 +184,7 @@ export function BestSellers() {
                 <button
                   type="button"
                   onClick={() => add(p)}
-                  className="mt-2.5 sm:mt-4 flex w-full items-center justify-center gap-1 rounded-lg sm:rounded-xl bg-[#F15A24] py-1.5 sm:py-2.5 text-[11px] sm:text-sm font-bold text-white shadow-sm transition hover:bg-[#D84B18] hover:shadow-md active:scale-[0.98]"
+                  className="mt-2.5 sm:mt-4 flex w-full items-center justify-center gap-1 rounded-lg sm:rounded-xl bg-[#F15A24] py-1.5 sm:py-2.5 text-[11px] sm:text-sm font-semibold text-white shadow-sm transition hover:bg-[#D84B18] hover:shadow-md active:scale-[0.98]"
                 >
                   <span>Add to Cart</span>
                   <ArrowRight size={13} className="stroke-[2.5] sm:h-3.5 sm:w-3.5" />

@@ -218,7 +218,10 @@ const categoryCards = [
 
 export function ShopByNeed() {
   return (
-    <section className="relative overflow-hidden bg-[#e8f3fd] px-3 pt-6 pb-14 sm:px-6 sm:pt-8 sm:pb-16 md:px-8 md:pt-10 md:pb-20">
+    <section className="relative overflow-visible bg-[#e8f3fd] px-3 pt-6 pb-14 sm:px-6 sm:pt-8 sm:pb-16 md:px-8 md:pt-10 md:pb-20">
+      {/* Background extension to cover gap between HeroBanner and ShopByNeed */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 -mt-12 sm:-mt-14 md:-mt-16 h-12 sm:h-14 md:h-16 bg-[#e8f3fd] z-50" aria-hidden="true"></div>
+
       {/* Top wave transition */}
       <div
         className="pointer-events-none absolute top-0 left-0 right-0 h-6 sm:h-8 md:h-10 overflow-hidden"
@@ -231,7 +234,7 @@ export function ShopByNeed() {
           fill="none"
         >
           <path
-            d="M 0 0 L 1440 0 L 1440 18 C 1200 32 960 8 720 24 C 480 38 240 14 0 28 Z"
+            d="M 0 18 C 240 4 480 28 720 14 C 960 0 1200 24 1440 10 L 1440 40 L 0 40 Z"
             fill="#e8f3fd"
           />
         </svg>

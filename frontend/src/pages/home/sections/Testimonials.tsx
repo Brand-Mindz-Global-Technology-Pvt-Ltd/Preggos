@@ -64,7 +64,7 @@ export function Testimonials() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading & Subtitle */}
         <div className="text-center">
-          <h2 data-scroll-reveal className="font-display text-2xl font-black text-[#0C2340] sm:text-3xl md:text-[32px] leading-tight">
+          <h2 data-scroll-reveal className="font-display text-2xl font-bold text-[#0C2340] sm:text-3xl md:text-[32px] leading-tight">
             Real Stories. Real Happiness.
           </h2>
           <p data-scroll-reveal className="mt-1 text-xs text-[#50617A] sm:text-[13px]">

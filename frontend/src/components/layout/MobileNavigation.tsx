@@ -13,7 +13,7 @@ export function MobileNavigation({ close }: { close: () => void }) {
 
       {/* Navigation Drawer */}
       <nav className="relative z-50 border-t border-slate-100 bg-white px-5 py-4 shadow-xl lg:hidden">
-        <div className="grid gap-1 font-bold text-[#12294a]">
+        <div className="grid gap-1 font-semibold text-[#12294a]">
           <Link
             to="/"
             onClick={close}

@@ -21,12 +21,6 @@ export function BrandStoryBanner() {
               d="M 0 0 L 150 0 C 154 50 140 95 105 130 C 70 160 25 168 0 164 Z"
               fill="#F5A623"
             />
-            {/* White Hand-drawn Doodle (Sprout / Flying Wings) inside sun */}
-            <g transform="translate(68, 56) rotate(-12)" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none">
-              <path d="M -6 12 C -4 4, 2 -4, 10 -6 C 8 4, 2 10, -6 12 Z" />
-              <path d="M 4 -2 C 8 -10, 16 -13, 21 -11 C 18 -4, 12 1, 4 -2 Z" />
-              <path d="M -8 16 C -2 10, 6 2, 12 -6" strokeWidth="2" />
-            </g>
           </svg>
         </div>
 
@@ -44,13 +38,13 @@ export function BrandStoryBanner() {
           <img
             src={homeAssets.leaves.green}
             alt=""
-            className="home-doodle-drift absolute bottom-1.5 left-1.5 h-[60px] w-[60px] xs:h-[70px] xs:w-[70px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] object-contain"
+            className="home-doodle-drift absolute bottom-[2px] left-[45px] h-[60px] w-[60px] xs:h-[70px] xs:w-[70px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] object-contain"
           />
         </div>
 
         {/* Bottom-Center: Approved Pink Leaf PNG (near dividing curve) */}
         <div
-          className="pointer-events-none absolute bottom-0 left-[42%] xs:left-[43%] sm:left-[43%] md:left-[43%] lg:left-[43.5%] z-20 h-12 w-6 xs:h-14 xs:w-7 sm:h-20 sm:w-10 md:h-22 md:w-11"
+          className="pointer-events-none absolute -bottom-[25px] left-[12px] sm:left-[18px] left-[42%] xs:left-[43%] sm:left-[43%] md:left-[43%] lg:left-[43.5%] z-20 h-12 w-6 xs:h-14 xs:w-7 sm:h-20 sm:w-10 md:h-22 md:w-11"
           aria-hidden="true"
         >
           <img
@@ -135,17 +129,17 @@ export function BrandStoryBanner() {
         {/* ======================================================== */}
         <div className="relative z-10 grid grid-cols-[48%_52%] sm:grid-cols-[46%_54%] lg:grid-cols-[45%_55%] min-h-[160px] xs:min-h-[175px] sm:min-h-[220px] md:min-h-[245px] lg:h-[255px]">
           {/* Left Column: Heading, Supporting Text, CTA */}
-          <div className="flex flex-col justify-center px-3 py-3 xs:px-4 xs:py-3.5 sm:px-8 sm:py-5 md:pl-16 md:pr-4 lg:pl-22 lg:pr-4 translate-x-[16px] min-[375px]:translate-x-[24px] min-[430px]:translate-x-[30px] sm:translate-x-[55px]">
+          <div className="flex flex-col justify-center px-2.5 py-2.5 xs:px-3 xs:py-3 sm:px-8 sm:py-5 md:pl-16 md:pr-4 lg:pl-22 lg:pr-4 translate-x-[12px] min-[375px]:translate-x-[18px] min-[430px]:translate-x-[24px] sm:translate-x-[55px]">
             {/* Heading Container with Stepped Layout & Doodles */}
             <div className="relative">
               <h2 data-scroll-reveal className="font-display">
                 {/* Line 1: Healthy Habits */}
-                <span className="block text-[16px] min-[375px]:text-[19px] min-[390px]:text-[21px] min-[430px]:text-[23px] sm:text-[36px] md:text-[40px] lg:text-[44px] font-bold text-[#A03E26] leading-none tracking-tight">
+                <span className="block text-[14px] min-[375px]:text-[16px] min-[390px]:text-[18px] min-[430px]:text-[20px] sm:text-[36px] md:text-[40px] lg:text-[44px] font-bold text-[#A03E26] leading-none tracking-tight">
                   Healthy Habits
                 </span>
 
                 {/* Line 2: Start Together (stepped right, no apostrophe mark) */}
-                <span className="relative inline-flex items-center text-[17px] min-[375px]:text-[20px] min-[390px]:text-[22px] min-[430px]:text-[24px] sm:text-[38px] md:text-[42px] lg:text-[46px] font-bold text-[#0E7870] leading-none tracking-tight ml-3.5 min-[375px]:ml-5 min-[390px]:ml-6 sm:ml-10 md:ml-14 mt-0.5 sm:mt-1">
+                <span className="relative inline-flex items-center text-[15px] min-[375px]:text-[17px] min-[390px]:text-[19px] min-[430px]:text-[21px] sm:text-[38px] md:text-[42px] lg:text-[46px] font-bold text-[#0E7870] leading-none tracking-tight ml-2.5 min-[375px]:ml-3.5 min-[390px]:ml-4 sm:ml-10 md:ml-14 mt-0.5 sm:mt-1">
                   <span>Start Together</span>
 
                   {/* Golden Heart Doodle to the right of Together */}
@@ -182,7 +176,7 @@ export function BrandStoryBanner() {
             {/* Supporting Text - Exactly 2 clean editable lines */}
             <p
               data-scroll-reveal
-              className="mt-1 xs:mt-1.5 sm:mt-2.5 max-w-[340px] text-[9.5px] min-[375px]:text-[10.5px] min-[390px]:text-[11px] min-[430px]:text-[11.5px] sm:text-[15px] md:text-[15.5px] lg:text-[16px] font-medium leading-[1.3] min-[375px]:leading-[1.35] text-[#1C324E]"
+              className="mt-1 xs:mt-1.5 sm:mt-2.5 max-w-[300px] min-[375px]:max-w-[320px] text-[8.5px] min-[375px]:text-[9.5px] min-[390px]:text-[10px] min-[430px]:text-[10.5px] sm:text-[15px] md:text-[15.5px] lg:text-[16px] font-medium leading-[1.3] min-[375px]:leading-[1.35] text-[#1C324E]"
             >
               Because the choices you make today,
               <br />
@@ -193,10 +187,10 @@ export function BrandStoryBanner() {
             <div data-scroll-reveal className="mt-2 xs:mt-2.5 sm:mt-3.5">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#0E7870] px-3.5 py-1 min-[375px]:px-4 min-[375px]:py-1.5 sm:px-5 sm:py-2 text-[9.5px] min-[375px]:text-[10px] min-[390px]:text-[10.5px] min-[430px]:text-[11px] sm:text-[15px] md:text-[15.5px] font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#0A5A53] hover:shadow-md active:scale-[0.98] whitespace-nowrap"
+                className="inline-flex items-center gap-1 sm:gap-2 rounded-full bg-[#0E7870] px-3 py-1 min-[375px]:px-3.5 min-[375px]:py-1 sm:px-5 sm:py-2 text-[8.5px] min-[375px]:text-[9.5px] min-[390px]:text-[10px] min-[430px]:text-[10.5px] sm:text-[15px] md:text-[15.5px] font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#0A5A53] hover:shadow-md active:scale-[0.98] whitespace-nowrap"
               >
                 <span>Explore Our Story</span>
-                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 stroke-[2.5]" />
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 stroke-[2.5]" />
               </Link>
             </div>
           </div>
@@ -217,13 +211,13 @@ export function BrandStoryBanner() {
               <img
                 src={homeAssets.story.src}
                 alt={homeAssets.story.alt}
-                className="h-full w-full object-cover object-[68%_33%]"
+                className="h-full w-full object-cover object-[65%_30%] sm:object-[68%_33%]"
                 loading="lazy"
               />
             </div>
 
             {/* Speech Bubble 1: "For your changing needs" (Cyan/Teal, Left, Dashed border & tail, shifted 55px right) */}
-            <div data-scroll-reveal className="pointer-events-none absolute left-[2%] xs:left-[3%] sm:left-[4%] top-[8%] sm:top-[10%] z-30 scale-[0.58] xs:scale-[0.68] sm:scale-90 md:scale-100 origin-top-left translate-x-[55px]">
+            <div data-scroll-reveal className="pointer-events-none absolute left-[2%] xs:left-[3%] sm:left-[4%] top-[8%] sm:top-[10%] z-30 scale-[0.55] xs:scale-[0.62] sm:scale-[0.85] md:scale-100 origin-top-left translate-x-[55px]">
               <div className="relative w-[116px] h-[78px]">
                 {/* SVG Bubble with Seamless Dashed Border & Triangular Tail pointing down-right */}
                 <svg viewBox="0 0 116 78" className="absolute inset-0 h-full w-full overflow-visible drop-shadow-[0_2px_8px_rgba(14,120,112,0.12)]">
@@ -257,7 +251,7 @@ export function BrandStoryBanner() {
             </div>
 
             {/* Speech Bubble 2: "For her growing years" (Magenta/Pink, Right, Dashed border & tail, shifted 55px right) */}
-            <div data-scroll-reveal className="pointer-events-none absolute right-[8%] xs:right-[9%] sm:right-[11%] top-[8%] sm:top-[10%] z-30 scale-[0.58] xs:scale-[0.68] sm:scale-90 md:scale-100 origin-top-right translate-x-[55px]">
+            <div data-scroll-reveal className="pointer-events-none absolute right-[8%] xs:right-[9%] sm:right-[11%] top-[8%] sm:top-[10%] z-30 scale-[0.55] xs:scale-[0.62] sm:scale-[0.85] md:scale-100 origin-top-right translate-x-[55px]">
               <div className="relative w-[116px] h-[78px]">
                 {/* SVG Bubble with Seamless Dashed Border & Triangular Tail pointing down-left */}
                 <svg viewBox="0 0 116 78" className="absolute inset-0 h-full w-full overflow-visible drop-shadow-[0_2px_8px_rgba(233,30,99,0.12)]">

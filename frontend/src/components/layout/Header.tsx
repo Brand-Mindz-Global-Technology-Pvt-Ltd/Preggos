@@ -31,7 +31,7 @@ export function Header() {
         </div>
 
         {/* Center: Desktop Navigation */}
-        <nav className="hidden items-center gap-6 text-xs font-bold text-[#12294a] lg:flex">
+        <nav className="hidden items-center gap-6 text-xs font-semibold text-[#12294a] lg:flex">
           <Link className="border-b-2 border-[#ef6241] pb-1 text-[#ef6241]" to="/">Home</Link>
           <Link to="/shop">Shop <ChevronDown className="inline" size={11} /></Link>
           <Link to="/shop?category=Nourish">Mother <ChevronDown className="inline" size={11} /></Link>

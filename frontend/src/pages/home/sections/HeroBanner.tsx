@@ -13,7 +13,7 @@ export function HeroBanner() {
         {/* GROUP: Decorations                                       */}
         {/* ======================================================== */}
         {/* 1. Large partial yellow sun in top-left corner - reduced size to match Figma */}
-        <div className="pointer-events-none absolute -left-10 -top-10 z-0 h-20 w-20 sm:-left-8 sm:-top-8 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40 select-none">
+        <div className="pointer-events-none absolute -left-10 -top-10 z-0 h-24 w-24 sm:-left-8 sm:-top-8 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40 select-none">
           <svg viewBox="0 0 160 160" fill="none" className="h-full w-full">
             <circle cx="10" cy="10" r="120" fill="#FBAF3C" opacity="0.95" />
             <circle cx="10" cy="10" r="132" stroke="#F5A623" strokeWidth="2.5" fill="none" opacity="0.9" />
@@ -21,7 +21,7 @@ export function HeroBanner() {
         </div>
 
         {/* 2. Left Teal Botanical Leaf decoration (green-leaf.png) - increased size and positioned at upper teal shape */}
-        <div className="pointer-events-none absolute -left-1 sm:left-0 bottom-[calc(40%_-_70px)] xs:bottom-[calc(38%_-_70px)] sm:bottom-[calc(45%_-_70px)] md:bottom-[calc(42%_-_70px)] lg:bottom-[calc(40%_-_70px)] z-10 w-16 xs:w-[80px] sm:w-[140px] md:w-[170px] lg:w-[220px] -translate-x-[45px] select-none">
+        <div className="pointer-events-none absolute -left-1 sm:left-0 bottom-[calc(40%_-_70px)] xs:bottom-[calc(38%_-_70px)] sm:bottom-[calc(45%_-_70px)] md:bottom-[calc(42%_-_70px)] lg:bottom-[calc(40%_-_70px)] z-10 w-20 xs:w-[90px] sm:w-[140px] md:w-[170px] lg:w-[220px] -translate-x-[45px] select-none">
   <img
     src={greenLeaf}
     alt=""
@@ -62,7 +62,7 @@ export function HeroBanner() {
         </div>
 
       {/* 4. Orange/Gold Botanical Leaf */}
- <div className="pointer-events-none absolute left-[50px] sm:left-[40px] bottom-[calc(40%_-_110px)] xs:bottom-[calc(38%_-_110px)] sm:bottom-[calc(45%_-_110px)] md:bottom-[calc(42%_-_110px)] lg:bottom-[calc(40%_-_110px)] z-10 w-5 xs:w-[26px] sm:w-[47.5px] md:w-[59px] lg:w-[80px] translate-x-[400px] select-none">
+ <div className="pointer-events-none absolute left-[40px] sm:left-[40px] bottom-[calc(40%_-_110px)] xs:bottom-[calc(38%_-_110px)] sm:bottom-[calc(45%_-_110px)] md:bottom-[calc(42%_-_110px)] lg:bottom-[calc(40%_-_110px)] z-10 w-5 xs:w-[26px] sm:w-[47.5px] md:w-[59px] lg:w-[80px] translate-x-[140px] xs:translate-x-[160px] sm:translate-x-[460px] select-none">
   <img
     src={goldLeaf}
     alt=""
@@ -80,11 +80,11 @@ export function HeroBanner() {
           {/* LEFT SIDE: Hero Text, Trust Badges, CTA, Social Proof */}
           <div data-hero-enter="text" className="translate-x-0 sm:translate-x-[50px] lg:-translate-x-[10px] flex flex-col justify-center px-2 py-2 xs:px-3 xs:py-2.5 sm:px-8 md:py-7 lg:pl-14 lg:pr-0 lg:w-[116%] lg:max-w-[660px] lg:z-10">
             {/* Heading Container with Doodles */}
-            <div data-scroll-reveal className="relative w-full max-w-full -translate-y-[12px] sm:-translate-y-[25px] md:-translate-y-[30px]">
+            <div data-scroll-reveal className="relative w-full max-w-full min-h-[50px] sm:min-h-[60px] md:min-h-[70px] -translate-y-[15px] sm:-translate-y-[25px] md:-translate-y-[30px]">
               {/* Heading Text */}
               <h1 className="font-display tracking-tight text-[#0C2340] text-center">
                 {/* Line 1: Gentle bent/curved appearance of "Happy Mom," */}
-                <span className="relative flex justify-center items-center text-[11px] min-[375px]:text-[13px] min-[390px]:text-[15px] min-[430px]:text-[18px] sm:text-4xl md:text-[46px] lg:text-[53px] font-bold leading-none select-none">
+                <span className="relative flex justify-center items-center text-[15px] min-[375px]:text-[17px] min-[390px]:text-[19px] min-[430px]:text-[21px] sm:text-4xl md:text-[46px] lg:text-[53px] font-bold leading-none select-none">
                   <span className="inline-block transform -rotate-[3deg] translate-y-[2px] sm:translate-y-[3px]">Happy</span>
                   <span className="inline-block mx-1 sm:mx-1.5 md:mx-2"></span>
                   <span className="relative inline-block transform rotate-[3.5deg] translate-y-[2px] sm:translate-y-[3px]">
@@ -107,7 +107,7 @@ export function HeroBanner() {
                 </span>
 
                 {/* Line 2: "Healthy Daughter" with handwritten style, curved angle, compact positioning & doodles */}
-                <span className="relative mt-0.5 sm:-mt-1 md:-mt-1.5 flex justify-center items-center">
+                <span className="relative mt-0.5 sm:mt-2 md:mt-3 flex justify-center items-center">
                   {/* Teal Doodle Heart left of "Healthy Daughter" */}
                   <span className="pointer-events-none mr-1 sm:mr-1.5 md:mr-2 shrink-0 transform -rotate-[8deg] -translate-y-1">
                     <svg viewBox="0 0 24 24" fill="none" className="h-2 w-2 min-[375px]:h-2.5 min-[375px]:w-2.5 sm:h-4 sm:w-4 md:h-5 md:w-5">
@@ -123,7 +123,7 @@ export function HeroBanner() {
                   </span>
 
                   {/* Visibly curved handwritten "Healthy Daughter" */}
-                  <span className="relative inline-flex items-center text-[11px] min-[375px]:text-[13px] min-[390px]:text-[15px] min-[430px]:text-[18px] sm:text-4xl md:text-[46px] lg:text-[53px] font-bold leading-none text-[#0E8276] select-none">
+                  <span className="relative inline-flex items-center text-[15px] min-[375px]:text-[17px] min-[390px]:text-[19px] min-[430px]:text-[21px] sm:text-4xl md:text-[46px] lg:text-[53px] font-bold leading-none text-[#0E8276] select-none">
                     <span className="inline-block transform -rotate-[3.2deg] origin-bottom-left translate-y-[1px] sm:translate-y-[2px]">
                       Healthy
                     </span>
@@ -150,16 +150,18 @@ export function HeroBanner() {
               </h1>
             </div>
 
-            {/* Supporting Text */}
-            <p data-scroll-reveal className="mt-1 xs:mt-1.5 sm:mt-2 md:mt-2.5 max-w-[170px] min-[375px]:max-w-[195px] min-[430px]:max-w-[220px] sm:max-w-[460px] lg:max-w-[520px] translate-x-[2px] -translate-y-[1px] sm:translate-x-0 sm:translate-y-0 lg:translate-x-[50px] lg:-translate-y-[4px] text-[8.5px] min-[375px]:text-[9.5px] min-[390px]:text-[10px] min-[430px]:text-[11px] sm:text-[14px] md:text-[16px] lg:text-[17.5px] font-semibold leading-tight sm:leading-relaxed text-[#1E344F]">
-              Wholesome nutrition for every beautiful stage of her life — from your bump to her dreams!
-            </p>
+            {/* Content Group: Description, Trust Badges, CTA, Social Proof */}
+            <div className="-translate-y-[30px] sm:translate-y-0">
+              {/* Supporting Text */}
+              <p data-scroll-reveal className="mt-2.5 xs:mt-3 sm:mt-2 md:mt-2.5 max-w-[170px] min-[375px]:max-w-[195px] min-[430px]:max-w-[220px] sm:max-w-[460px] lg:max-w-[520px] translate-x-[2px] sm:translate-x-0 lg:translate-x-[50px] lg:-translate-y-[4px] text-[10px] min-[375px]:text-[11px] min-[390px]:text-[12px] min-[430px]:text-[13px] sm:text-[14px] md:text-[16px] lg:text-[17.5px] leading-tight sm:leading-relaxed text-[#1E344F]">
+                Wholesome nutrition for every beautiful stage of her life — from your bump to her dreams!
+              </p>
 
-            {/* GROUP: Trust Badges */}
-            <div data-scroll-reveal className="relative left-0 min-[375px]:left-[4px] sm:left-[35px] lg:left-[40px] mt-1.5 xs:mt-2 sm:mt-2.5 md:mt-3 flex flex-wrap items-center gap-x-1.5 min-[375px]:gap-x-2.5 gap-y-0.5 sm:gap-x-4 sm:gap-y-1 text-[6.5px] min-[375px]:text-[7px] min-[390px]:text-[7.5px] min-[430px]:text-[8px] sm:text-xs font-bold text-[#0C2340]">
+              {/* GROUP: Trust Badges */}
+              <div data-scroll-reveal className="relative left-0 min-[375px]:left-[4px] sm:left-[35px] lg:left-[40px] mt-2 xs:mt-2.5 sm:mt-2.5 md:mt-3 flex flex-nowrap sm:flex-wrap items-center gap-x-0.5 min-[375px]:gap-x-1 sm:gap-x-2.5 gap-y-0.5 sm:gap-y-1 text-[5.5px] min-[375px]:text-[6px] min-[390px]:text-[6.5px] min-[430px]:text-[7px] sm:text-xs text-[#0C2340]">
               {/* Healthy Ingredients */}
-              <div className="flex items-center gap-0.5 sm:gap-1.5">
-                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 shrink-0">
+              <div className="flex items-center gap-0.5 sm:gap-1.5 shrink-0">
+                <svg viewBox="0 0 16 16" fill="none" className="h-1.5 w-1.5 xs:h-2 xs:w-2 sm:h-3.5 sm:w-3.5 shrink-0">
                   <path
                     d="M 1 8 C 1 3 7 0 12 0 C 13 5 10 11 5 12 C 1 13 1 8 1 8 Z M 5 12 L 1 16"
                     stroke="#0E8276"
@@ -172,8 +174,8 @@ export function HeroBanner() {
               </div>
 
               {/* No Preservatives */}
-              <div className="flex items-center gap-0.5 sm:gap-1.5">
-                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 shrink-0">
+              <div className="flex items-center gap-0.5 sm:gap-1.5 shrink-0">
+                <svg viewBox="0 0 16 16" fill="none" className="h-1.5 w-1.5 xs:h-2 xs:w-2 sm:h-3.5 sm:w-3.5 shrink-0">
                   <path
                     d="M 5 1 L 11 1 M 8 1 L 8 4 L 2 13 C 1 15 2 16 4 16 L 12 16 C 14 16 15 15 14 13 L 8 4"
                     stroke="#0E8276"
@@ -187,8 +189,8 @@ export function HeroBanner() {
               </div>
 
               {/* Made with Love */}
-              <div className="relative left-0 sm:left-[20px] lg:left-0 flex items-center gap-0.5 sm:gap-1.5">
-                <svg viewBox="0 0 16 16" fill="none" className="h-2 w-2 xs:h-2.5 xs:w-2.5 sm:h-3.5 sm:w-3.5 shrink-0">
+              <div className="relative left-0 sm:left-[20px] lg:left-0 flex items-center gap-0.5 sm:gap-1.5 shrink-0">
+                <svg viewBox="0 0 16 16" fill="none" className="h-1.5 w-1.5 xs:h-2 xs:w-2 sm:h-3.5 sm:w-3.5 shrink-0">
                   <path
                     d="M 8 14 C 3 9 0 6 2 2 C 5 -1 8 2 8 4 C 8 2 11 -1 14 2 C 16 6 13 9 8 14 Z"
                     stroke="#F15A24"
@@ -205,7 +207,7 @@ export function HeroBanner() {
               {/* Orange CTA: Shop for Mom */}
               <Link
                 to="/shop?category=Nourish"
-                className="inline-flex items-center gap-0.5 min-[375px]:gap-1 rounded-full bg-[#F15A24] px-1.5 py-0.5 min-[375px]:px-2.5 min-[375px]:py-1 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[8px] min-[375px]:text-[9px] min-[390px]:text-[9.5px] min-[430px]:text-[10.5px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-bold text-white shadow-sm transition-all hover:bg-[#D84B18] hover:shadow-md hover:-translate-y-0.5 shrink-0 whitespace-nowrap"
+                className="inline-flex items-center gap-0.5 min-[375px]:gap-1 rounded-full bg-[#F15A24] px-1 py-0.5 min-[375px]:px-2 min-[375px]:py-0.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[8px] min-[375px]:text-[9px] min-[390px]:text-[9.5px] min-[430px]:text-[10px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-semibold text-white shadow-sm transition-all hover:bg-[#D84B18] hover:shadow-md hover:-translate-y-0.5 shrink-0 whitespace-nowrap"
               >
                 <span>Shop for Mom</span>
                 <ArrowRight className="h-2 w-2 min-[375px]:h-2.5 min-[375px]:w-2.5 sm:size-[15px]" />
@@ -214,7 +216,7 @@ export function HeroBanner() {
               {/* Yellow CTA: Shop for Daughter */}
               <Link
                 to="/shop?category=Celebrate"
-               className="inline-flex items-center gap-0.5 min-[375px]:gap-1 rounded-full bg-[#FDB813] px-[0.5px] py-0.5 min-[375px]:px-[4.5px] min-[375px]:py-1 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[8px] min-[375px]:text-[9px] min-[390px]:text-[9.5px] min-[430px]:text-[10.5px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-bold text-[#0C2340] shadow-sm transition-all hover:bg-[#E9A709] hover:shadow-md hover:-translate-y-0.5 shrink-0 whitespace-nowrap"
+               className="inline-flex items-center gap-0.5 min-[375px]:gap-1 rounded-full bg-[#FDB813] px-[0.5px] py-0.5 min-[375px]:px-[3.5px] min-[375px]:py-0.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-[8px] min-[375px]:text-[9px] min-[390px]:text-[9.5px] min-[430px]:text-[10px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-semibold text-[#0C2340] shadow-sm transition-all hover:bg-[#E9A709] hover:shadow-md hover:-translate-y-0.5 shrink-0 whitespace-nowrap"
               >
                 <span>Shop for Daughter</span>
                 <ArrowRight className="h-2 w-2 min-[375px]:h-2.5 min-[375px]:w-2.5 sm:size-[15px]" />
@@ -222,7 +224,7 @@ export function HeroBanner() {
             </div>
 
             {/* Social Proof */}
-            <div data-scroll-reveal className="relative left-0 min-[375px]:left-[8px] sm:left-[60px] mt-1.5 xs:mt-2 sm:mt-2.5 md:mt-3 flex items-center gap-1.5 sm:gap-2.5 text-[6.5px] min-[375px]:text-[7px] min-[390px]:text-[7.5px] min-[430px]:text-[8px] sm:text-xs font-bold text-[#0C2340]">
+            <div data-scroll-reveal className="relative left-0 min-[375px]:left-[8px] sm:left-[60px] mt-1.5 xs:mt-2 sm:mt-2.5 md:mt-3 flex items-center gap-1.5 sm:gap-2.5 text-[6.5px] min-[375px]:text-[7px] min-[390px]:text-[7.5px] min-[430px]:text-[8px] sm:text-xs text-[#0C2340]">
               <div className="flex -space-x-1 sm:-space-x-1.5">
                 <span className="flex h-2.5 w-2.5 min-[375px]:h-3 min-[375px]:w-3 sm:h-5 sm:w-5 md:h-6 md:w-6 items-center justify-center rounded-full border border-[#FFFDF7] bg-[#F8C3CE] text-[4.5px] min-[375px]:text-[5px] sm:text-[8px] md:text-[9px] shadow-xs">
                   👩🏽
@@ -239,6 +241,7 @@ export function HeroBanner() {
 
               </div>
               <span className="truncate">Trusted by 50,000+ Happy Moms</span>
+            </div>
             </div>
           </div>
 
@@ -331,7 +334,7 @@ export function HeroBanner() {
         >
           {/* Soft Pale Blue Wave Fill - smooth gentle curve across full width */}
           <path
-            d="M 0 35 C 240 15 480 40 720 25 C 960 10 1200 30 1440 20 L 1440 80 L 0 80 Z"
+            d="M 0 0 L 1440 0 L 1440 20 C 1200 30 960 10 720 25 C 480 40 240 15 0 35 L 0 80 Z"
             fill="#E8F3FD"
           />
           {/* Thin Blue Outline */}

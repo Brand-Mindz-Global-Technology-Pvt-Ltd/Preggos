@@ -35,7 +35,7 @@ export function ProductBundles() {
           <div className="flex items-center gap-2">
             <Gift className="text-[#ef6241] shrink-0" size={26} />
             <div>
-              <h2 data-scroll-reveal className="font-display text-2xl font-black md:text-4xl text-[#102650]">
+              <h2 data-scroll-reveal className="font-display text-2xl font-bold md:text-4xl text-[#102650]">
                 Better Together
               </h2>
               <p data-scroll-reveal className="text-xs leading-5 text-[#50617a] sm:text-sm">
@@ -46,7 +46,7 @@ export function ProductBundles() {
           <Link
             to="/shop"
             data-scroll-reveal
-            className="text-xs font-bold text-[#ef6241] hover:text-[#d84b18] transition inline-flex items-center gap-1"
+            className="text-xs font-semibold text-[#ef6241] hover:text-[#d84b18] transition inline-flex items-center gap-1"
           >
             <span>View All Bundles</span>
             <ArrowRight size={13} />
