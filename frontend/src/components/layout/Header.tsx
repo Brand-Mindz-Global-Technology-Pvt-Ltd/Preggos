@@ -11,7 +11,7 @@ export function Header() {
   const { ids } = useWishlist();
 
   return (
-    <header className="sticky top-0 z-40 bg-white shadow-xs">
+    <header className="w-full bg-white shadow-xs">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-2.5 sm:gap-4 sm:px-6 md:px-8 md:py-3">
         {/* Left: Hamburger Button (Mobile) + Brand Logo */}
         <div className="flex items-center gap-2 sm:gap-3">

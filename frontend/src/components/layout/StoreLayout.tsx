@@ -69,7 +69,13 @@ export function StoreLayout() {
         group.forEach((card, index) => {
           if (card.dataset.scrollState === "revealed" || card.dataset.scrollState === "done") return;
           // The first card appears first; each following card appears with a 1-second delay
-          const delay = 200 + index * 1000;
+          const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+          const mobileStagger = card.dataset.mobileStagger ? parseInt(card.dataset.mobileStagger, 10) : null;
+          const desktopStagger = card.dataset.desktopStagger ? parseInt(card.dataset.desktopStagger, 10) : null;
+          const stagger = isMobile
+            ? (mobileStagger !== null ? mobileStagger : 1000)
+            : (desktopStagger !== null ? desktopStagger : 1000);
+          const delay = (isMobile && mobileStagger !== null ? 100 : 200) + index * stagger;
           card.style.setProperty("--scroll-reveal-delay", `${delay}ms`);
           card.dataset.scrollState = "revealed";
 
@@ -113,9 +119,13 @@ export function StoreLayout() {
   }, [pathname]);
 
   return (
-    <div ref={layoutRef} className="min-h-screen bg-cream text-navy overflow-x-hidden">
-      <AnnouncementBar />
-      <Header />
+    <div ref={layoutRef} className="min-h-screen bg-cream text-navy overflow-x-clip">
+      {/* Sticky top wrapper: keeps AnnouncementBar + Navbar pinned together with zero overlap */}
+      <div className="sticky top-0 z-[70] w-full">
+        <AnnouncementBar />
+        <Header />
+      </div>
+
       <Outlet />
       <Footer />
       <a

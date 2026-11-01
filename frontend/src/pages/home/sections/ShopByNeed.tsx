@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { homeAssets } from "../../../data/homeAssets";
@@ -217,6 +218,55 @@ const categoryCards = [
 ];
 
 export function ShopByNeed() {
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = cardsContainerRef.current;
+    if (!el || typeof window === "undefined") return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIsRevealed(true);
+      return;
+    }
+
+    const triggerReveal = () => {
+      setIsRevealed(true);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Do not trigger immediately on page load if user hasn't scrolled yet (scrollY < 30)
+            if (window.scrollY < 30) {
+              const handleScroll = () => {
+                if (window.scrollY > 30) {
+                  triggerReveal();
+                  window.removeEventListener("scroll", handleScroll);
+                }
+              };
+              window.addEventListener("scroll", handleScroll, { passive: true });
+            } else {
+              triggerReveal();
+            }
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px",
+      }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section className="relative overflow-visible bg-[#e8f3fd] px-3 pt-6 pb-14 sm:px-6 sm:pt-8 sm:pb-16 md:px-8 md:pt-10 md:pb-20">
       {/* Background extension to cover gap between HeroBanner and ShopByNeed */}
@@ -264,7 +314,7 @@ export function ShopByNeed() {
       </div>
 
       {/* Decorative doodle: Golden Sparkle Star between Card 1 and 2 */}
-      <div className="pointer-events-none absolute left-[27%] top-12 sm:top-14 md:top-16 opacity-80">
+      <div className="hidden sm:block pointer-events-none absolute left-[27%] top-12 sm:top-14 md:top-16 opacity-80">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <path
             d="M 12 2 Q 12 12, 2 12 Q 12 12, 12 22 Q 12 12, 22 12 Q 12 12, 12 2 Z"
@@ -278,7 +328,7 @@ export function ShopByNeed() {
       </div>
 
       {/* Decorative doodle: Flying Red/Pink Heart with looped trail on right */}
-      <div className="pointer-events-none absolute right-[28%] top-10 sm:top-12 md:top-14 opacity-85">
+      <div className="hidden sm:block pointer-events-none absolute right-[28%] top-10 sm:top-12 md:top-14 opacity-85">
         <svg width="70" height="35" viewBox="0 0 80 40" fill="none">
           <path
             d="M 5 28 C 15 28, 22 10, 32 10 C 40 10, 42 26, 32 30 C 24 32, 26 18, 45 16 C 55 14, 62 16, 68 18"
@@ -316,14 +366,22 @@ export function ShopByNeed() {
         </p>
 
         {/* 6 Cards Row: On desktop (lg+), exact 6-column layout matching reference */}
-        <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-6 lg:gap-4 xl:gap-5">
-          {categoryCards.map((category) => {
+        <div ref={cardsContainerRef} className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-6 lg:gap-4 xl:gap-5">
+          {categoryCards.map((category, index) => {
             return (
               <Link
                 key={category.title}
                 to={`/shop?category=${encodeURIComponent(category.title)}`}
-                data-scroll-card
-                className="group relative flex flex-col items-center justify-start transition-transform duration-300 hover:-translate-y-1.5 focus:outline-none"
+                data-scroll-state={isRevealed ? "revealed" : "pending"}
+                style={{
+                  "--scroll-reveal-delay": `${index * 200}ms`,
+                } as React.CSSProperties}
+                onTransitionEnd={(e) => {
+                  if (e.propertyName === "opacity" || e.propertyName === "transform") {
+                    e.currentTarget.dataset.scrollState = "done";
+                  }
+                }}
+                className="group relative flex flex-col items-center justify-start transition-transform duration-300 hover:-translate-y-1.5 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#102650] focus-visible:ring-offset-2 rounded-2xl"
               >
                 {/* Vector silhouette card container */}
                 <div className="relative aspect-square w-full max-w-[195px] drop-shadow-sm transition-all duration-300 group-hover:drop-shadow-md">
@@ -354,7 +412,7 @@ export function ShopByNeed() {
                 </div>
 
                 {/* White pill-shaped label centered at the bottom of the card */}
-                <div className="relative z-20 -mt-3.5 flex items-center justify-center gap-1 sm:gap-1.5 rounded-full bg-white px-2.5 sm:px-3.5 py-1 sm:py-1.5 shadow-[0_4px_14px_rgba(16,38,80,0.12)] border border-slate-100/80 transition-all duration-200 group-hover:shadow-[0_6px_18px_rgba(16,38,80,0.18)] group-hover:border-slate-200 whitespace-nowrap">
+                <div className="relative z-20 -mt-3.5 flex items-center justify-center gap-1 sm:gap-1.5 rounded-full bg-white px-2.5 sm:px-3.5 py-1 sm:py-1.5 shadow-[0_4px_14px_rgba(16,38,80,0.12)] border border-slate-100/80 transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:scale-[1.04] group-hover:shadow-[0_8px_20px_rgba(16,38,80,0.18)] group-hover:border-slate-200 group-focus-visible:-translate-y-1 group-focus-visible:scale-[1.04] group-focus-visible:shadow-[0_8px_20px_rgba(16,38,80,0.18)] group-focus-visible:ring-2 group-focus-visible:ring-[#102650]/40 group-focus-visible:border-slate-300 whitespace-nowrap">
                   <span
                     className="text-[10.5px] xs:text-[11px] sm:text-xs font-bold text-[#102650] tracking-tight"
                     style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
@@ -362,7 +420,7 @@ export function ShopByNeed() {
                     {category.title}
                   </span>
                   <span
-                    className="flex h-[18px] w-[18px] sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full text-white shadow-xs transition-transform duration-200 group-hover:translate-x-0.5"
+                    className="flex h-[18px] w-[18px] sm:h-5 sm:w-5 shrink-0 items-center justify-center rounded-full text-white shadow-xs transition-transform duration-300 ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1"
                     style={{ backgroundColor: category.arrowColor }}
                   >
                     <ArrowRight size={11} strokeWidth={2.8} />
