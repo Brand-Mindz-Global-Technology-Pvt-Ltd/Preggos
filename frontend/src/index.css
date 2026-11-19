@@ -62,7 +62,7 @@ body {
 /* Premium Scroll-Triggered Reveal Animation System */
 [data-scroll-state="pending"] {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(14px);
   pointer-events: none;
 }
 
@@ -70,8 +70,8 @@ body {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--scroll-reveal-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -79,11 +79,12 @@ body {
 [data-scroll-state="done"] {
   opacity: 1;
   transform: none;
+  pointer-events: auto;
 }
 
 .home-page [data-scroll-state="pending"] {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(14px);
   pointer-events: none;
 }
 
@@ -91,8 +92,8 @@ body {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--scroll-reveal-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -100,19 +101,169 @@ body {
 .home-page [data-scroll-state="done"] {
   opacity: 1;
   transform: none;
+  pointer-events: auto;
+}
+
+/* ======================================================== */
+/* Common Reusable Animation Utilities (Phase 1 Foundation) */
+/* ======================================================== */
+
+@keyframes preggos-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes preggos-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes preggos-image-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reusable Utility Classes */
+.preggos-fade-up {
+  animation: preggos-fade-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
+}
+
+.preggos-fade-in {
+  animation: preggos-fade-in 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity;
+}
+
+.preggos-image-enter {
+  animation: preggos-image-enter 550ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
+}
+
+.preggos-hover-lift {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 250ms ease;
+}
+
+.preggos-hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+.preggos-button-press {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preggos-button-press:active {
+  transform: scale(0.985);
+}
+
+/* Reusable Product Card Motion (Global foundation) */
+.motion-product-card {
+  border-radius: 1.5rem;
+  transition:
+    translate 320ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    box-shadow 320ms ease;
+}
+
+.motion-product-card:hover,
+.motion-product-card:focus-within {
+  translate: 0 -4px;
+  box-shadow: 0 8px 24px rgb(12 35 64 / 10%);
+}
+
+.motion-product-card img {
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+.motion-product-card:hover img,
+.motion-product-card:focus-within img {
+  transform: scale(1.045);
 }
 
 @media (prefers-reduced-motion: reduce) {
   [data-scroll-state="pending"],
   [data-scroll-state="revealed"],
   [data-scroll-reveal],
-  [data-scroll-card] {
+  [data-scroll-card],
+  .preggos-fade-up,
+  .preggos-fade-in,
+  .preggos-image-enter,
+  .route-content-enter,
+  .animate-drawer-down,
+  .animate-accordion-down {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     animation: none !important;
     pointer-events: auto !important;
   }
+
+  .preggos-hover-lift:hover,
+  .preggos-button-press:active,
+  .motion-product-card:hover,
+  .motion-product-card:hover img {
+    transform: none !important;
+    translate: none !important;
+  }
+}
+
+/* Subtle route transition: fades in content cleanly over 300ms without layout/transform shifts */
+@keyframes route-content-enter {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.route-content-enter {
+  animation: route-content-enter 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Mobile drawer and accordion transitions */
+@keyframes drawer-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-drawer-down {
+  animation: drawer-down 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes accordion-down {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .home-page .motion-product-card {
@@ -201,6 +352,12 @@ body {
 
   .home-page [data-hero-enter="image"] {
     animation: hero-image-enter 850ms 100ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+  }
+
+  /* Resolve HeroBanner conflict: disable competing keyframe once scroll-reveal takes over */
+  .home-page [data-hero-enter="text"] > [data-scroll-state="revealed"],
+  .home-page [data-hero-enter="text"] > [data-scroll-state="done"] {
+    animation: none;
   }
 
   .home-page .hero-photo-drift {

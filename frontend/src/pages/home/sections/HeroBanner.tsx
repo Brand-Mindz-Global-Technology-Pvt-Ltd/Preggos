@@ -28,7 +28,7 @@ export function HeroBanner() {
           data-hero-enter="text"
           className="absolute inset-y-0 left-[7.5%] sm:left-[8%] md:left-[8.5%] lg:left-[9%]
                      w-[36%] sm:w-[35%] md:w-[33%] lg:w-[31%]
-                     flex flex-col justify-center"
+                     flex flex-col justify-center translate-x-[20px] -translate-y-[40px]"
         >
           {/* ---- Heading ---- */}
           <div data-scroll-reveal className="relative top-3 sm:top-4 md:top-6 lg:top-[-45px]">
@@ -74,7 +74,7 @@ export function HeroBanner() {
                   </span>
                   <span className="inline-block mx-0.5 sm:mx-1" />
                   <span className="relative inline-block transform rotate-[2.5deg] translate-y-[0.5px] sm:translate-y-[1px]">
-                    Daughter
+                    Kids
                     {/* Gold heart doodle */}
                     <span className="pointer-events-none absolute -bottom-1 sm:-bottom-1.5 md:-bottom-2 right-0.5 transform rotate-[10deg]">
                       <svg viewBox="0 0 24 24" fill="none" className="h-2 w-2 min-[375px]:h-2.5 min-[375px]:w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 lg:h-4 lg:w-4">
@@ -170,7 +170,7 @@ export function HeroBanner() {
                          transition-all hover:bg-[#E9A709] hover:shadow-sm hover:-translate-y-0.5
                          shrink-0 whitespace-nowrap"
             >
-              <span>Shop for Daughter</span>
+              <span>Shop for Kids</span>
               <ArrowRight className="h-1.5 w-1.5 sm:h-2 sm:w-2 md:h-2.5 md:w-2.5 lg:h-3 lg:w-3" />
             </Link>
           </div>
@@ -236,7 +236,7 @@ export function HeroBanner() {
         {/* Content strictly overlaying the cream area on mobile */}
         <div
           data-hero-enter="text"
-          className="translate-x-[50px] translate-y-[20px] absolute top-[8.5%] min-[375px]:top-[9.5%] min-[430px]:top-[10.5%]
+          className="translate-x-[20px] -translate-y-[40px] absolute top-[8.5%] min-[375px]:top-[9.5%] min-[430px]:top-[10.5%]
                      left-[7.5%] min-[375px]:left-[8.5%] min-[430px]:left-[9.5%]
                      w-[76%] min-[375px]:w-[74%] min-[430px]:w-[72%]
                      flex flex-col justify-start"

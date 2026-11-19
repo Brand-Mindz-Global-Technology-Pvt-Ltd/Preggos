@@ -12,7 +12,7 @@ const bundles = [
     image: demoProducts[0].image,
   },
   {
-    title: "Mother & Daughter Box",
+    title: "Mother & Kids Box",
     detail: "Healthy favourites · Nutrition for both · Family wellness",
     badge: "Most Loved",
     color: "bg-[#dff4f1]",
